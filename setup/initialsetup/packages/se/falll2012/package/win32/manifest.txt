@@ -1,0 +1,29 @@
+Manifest
+
+This is a description of the contents of the Fall 2012 Software Engineering Course Development
+Environment.  Below are the packages included in this environment.
+
+1.  Customized Eclipse Package 
+
+    a.  Eclipse J2EE v4.2.0 (Juno)
+          i.  Windows (32) file:  eclipse-jee-juno-SR1-win32.zip
+          ii.  Download:  http://www.eclipse.org/downloads/
+          iii.  Install by unzip
+
+    b.  EGit
+        i.  Install by accessing 'Juno - http://download.eclipse.org/releases/juno' update site
+          (included in Eclipse update manager)
+
+    c.  Google Web Toolkit (GWT) 3.1.2 SDK and Eclipse Tooling
+        i. Windows (32) file:  com.google.gdt.eclipse.suite.4.2.update.site_3.1.2.zip
+        ii.  Download:  https://developers.google.com/eclipse/docs/install-from-zip
+        iii.Install via Eclipse Update Manager as Local Update Site
+
+2.  XAMP 1.8.1-VC9
+
+    a.  Windows (32) file:  xamp-win32-1.8.1-VC9.zip
+    b.  Download:  http://www.apachefriends.org/en/xampp-windows.html
+    c.  Install by unzip and then running XAMP installers.  See www.apachefriends.org/en/xampp-windows.html
+
+
+
