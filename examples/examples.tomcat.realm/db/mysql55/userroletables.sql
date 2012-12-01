@@ -3,6 +3,7 @@
 <!-- under the Realm element, connectionURL should be changed from  -->
 <!-- jdbc:mysql://localhost/authority?user=root       to            -->
 <!-- jdbc:mysql://localhost/<newdbname>?user=root                   -->
+
 create table users (
   user_name         varchar(15) not null primary key,
   user_pass         varchar(15) not null
