@@ -10,9 +10,7 @@ public class ListUsers extends MySQLDBUtil {
 	public ListUsers(String[] args) {
 		processArgs(args);
 	}
-	/**
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
 		ListUsers listUsers = new ListUsers(args);
 		listUsers.run();
