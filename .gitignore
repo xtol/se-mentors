@@ -2,6 +2,6 @@
 .DS_Store
 bin/
 test-classes/
-.gwt
+.gwt/
 
 # Package Files #
