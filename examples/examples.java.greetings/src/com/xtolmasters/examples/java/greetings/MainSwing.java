@@ -11,6 +11,8 @@ public class MainSwing {
 		JOptionPane pane = new JOptionPane(MainConsole.MESSAGE);
 		JDialog dialog = pane.createDialog(WINDOW_TITLE);
 		dialog.setVisible(true);
+		
+		
 	}
 
 }
