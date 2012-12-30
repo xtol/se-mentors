@@ -5,17 +5,21 @@ http://tomcat.apache.org/tomcat-7.0-doc/realm-howto.html
 The basic steps are
 
 1.  Install MySQL
-2.  Start MySQL and create  database (with name 'authority' by default)
-3.  Create user and user_role tables.  Can use db/mysql55/userroletables.sql to create these tables.  
-    To do so, go to myPhpAdmin (click Admin on XAMPP control panel next to mysql), select the
+2.  Start MySQL using XAMPP
+3.  Create database.  Start phpMyAdmin with MySQL Admin button in XAMPP.   Create a new database
+    named 'authority'.
+4.  Create user and user_role tables.  Start phpMyAdmin with MySQL Admin button in XAMPP.   
+    Can use db/mysql55/userroletables.sql to create these tables.  To do so, go to myPhpAdmin 
+    (click Admin on XAMPP control panel next to mysql), select the
     'authority' database, click on 'SQL' tab at the top.  Paste the content from
     the userroletables.sql into the edit box, and click 'Go'.  This should create the 'users' table
     and the 'user-roles' table.
-4.  Add user and role information to the user and user role tables.
-5.  Add mysql connector jar (in tomcat7/lib/mysql-connector-java-5.1.22-bin.jar) to <tomcathome>/lib.
+5.  Add mysql connector jar (tomcat7/lib/mysql-connector-java-5.1.22-bin.jar) to <tomcathome>/lib 
+    directory.
 6.  Change the Realm setup in <tomcathome>/conf/server.xml.  See at the bottom of
-the file tomcat7/conf/server.xml for example changes.
-7.  Restart Tomcat7
+    the file tomcat7/conf/server.xml for example changes.
+7.  Use the AddUser.launch launch config to add a test user/password/roles.
+7.  Start Tomcat7
 
 See http://tomcat.apache.org/tomcat-7.0-doc/realm-howto.html for more details.
 

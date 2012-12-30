@@ -33,7 +33,7 @@ public class AuthorityDBUtil {
          }
 	}
 	
-	protected Connection getConnection(String connectionUrl) throws SQLException {
+	protected synchronized Connection getConnection(String connectionUrl) throws SQLException {
 		return DriverManager.getConnection(connectionUrl);
 	}
 	
