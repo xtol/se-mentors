@@ -94,7 +94,7 @@
 <!-- 			<Realm className="org.apache.catalina.realm.JDBCRealm"
 					driverName="org.gjt.mm.mysql.Driver"  
 -->
-<!--                NOTE:  the assumed db name is 'authority'.  If it's something else,
+<!--                NOTE:  the assumed db name is 'xtolauthority'.  If it's something else,
 					      then the connectionURL below must be updated 
 -->
 <!--      

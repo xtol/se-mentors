@@ -6,7 +6,11 @@ The basic steps are
 
 1.  Install MySQL
 2.  Start MySQL and create  database (with name 'authority' by default)
-3.  Create user and user_role tables.  Can use db/mysql55/userroletables.sql to create these tables.
+3.  Create user and user_role tables.  Can use db/mysql55/userroletables.sql to create these tables.  
+    To do so, go to myPhpAdmin (click Admin on XAMPP control panel next to mysql), select the
+    'authority' database, click on 'SQL' tab at the top.  Paste the content from
+    the userroletables.sql into the edit box, and click 'Go'.  This should create the 'users' table
+    and the 'user-roles' table.
 4.  Add user and role information to the user and user role tables.
 5.  Add mysql connector jar (in tomcat7/lib/mysql-connector-java-5.1.22-bin.jar) to <tomcathome>/lib.
 6.  Change the Realm setup in <tomcathome>/conf/server.xml.  See at the bottom of
