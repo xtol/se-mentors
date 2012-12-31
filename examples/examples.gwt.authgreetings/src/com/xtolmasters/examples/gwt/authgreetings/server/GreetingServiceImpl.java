@@ -1,6 +1,9 @@
 package com.xtolmasters.examples.gwt.authgreetings.server;
 
 import javax.annotation.Resource;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
@@ -16,8 +19,21 @@ import com.xtolmasters.examples.gwt.authgreetings.shared.FieldVerifier;
 public class GreetingServiceImpl extends RemoteServiceServlet implements
 		GreetingService {
 
-	@Resource(name="jdbc/mkyongdb")
+	private static final String DB_RESOURCE_NAME = "jdbc/xtolmasters";
+
+	@Resource(name = DB_RESOURCE_NAME)
 	private DataSource ds;
+
+	@SuppressWarnings("unused")
+	private DataSource getDataSourceFromJNDI() {
+		try {
+			Context ctx = new InitialContext();
+			return (DataSource) ctx.lookup("java:comp/env/" + DB_RESOURCE_NAME);
+		} catch (NamingException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 	public String greetServer(String input) throws IllegalArgumentException {
 		// Verify that the input is valid.
@@ -42,7 +58,8 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 
 		return "Hello, " + input + "!<br><br>I am running " + serverInfo
 				+ ".<br><br>It looks like you are using:<br>" + userAgent
-				+ "<br><br>Authenticated User is: " + remoteUser + "<br><br>DataSource is: "+ds+"<br>";
+				+ "<br><br>Authenticated User is: " + remoteUser
+				+ "<br><br>DataSource is: " + ds + "<br>";
 	}
 
 	/**
@@ -65,7 +82,8 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 		HttpServletRequest request = getThreadLocalRequest();
 		if (request.getRemoteUser() != null) {
 			HttpSession session = request.getSession(false);
-			if (session != null) session.invalidate();
+			if (session != null)
+				session.invalidate();
 		}
 	}
 }
