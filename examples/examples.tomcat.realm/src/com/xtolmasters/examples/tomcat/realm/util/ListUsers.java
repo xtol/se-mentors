@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ListUsers extends AuthorityDBUtil {
+public class ListUsers extends XTOLMastersDBUtil {
 
 	public ListUsers(String[] args) {
 		processArgs(args);

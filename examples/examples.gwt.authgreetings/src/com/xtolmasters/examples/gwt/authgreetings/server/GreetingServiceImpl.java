@@ -1,8 +1,9 @@
 package com.xtolmasters.examples.gwt.authgreetings.server;
 
-import java.io.IOException;
-
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.sql.DataSource;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.xtolmasters.examples.gwt.authgreetings.client.GreetingService;
@@ -15,10 +16,14 @@ import com.xtolmasters.examples.gwt.authgreetings.shared.FieldVerifier;
 public class GreetingServiceImpl extends RemoteServiceServlet implements
 		GreetingService {
 
+	@Resource(name="jdbc/mkyongdb")
+	private DataSource ds;
+
 	public String greetServer(String input) throws IllegalArgumentException {
-		// Verify that the input is valid. 
+		// Verify that the input is valid.
 		if (!FieldVerifier.isValidName(input)) {
-			// If the input is not valid, throw an IllegalArgumentException back to
+			// If the input is not valid, throw an IllegalArgumentException back
+			// to
 			// the client.
 			throw new IllegalArgumentException(
 					"Name must be at least 4 characters long");
@@ -29,21 +34,23 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 
 		// XXX Add getting authenticated user and reporting it back
 		String remoteUser = getThreadLocalRequest().getRemoteUser();
-		
-		// Escape data from the client to avoid cross-site script vulnerabilities.
+
+		// Escape data from the client to avoid cross-site script
+		// vulnerabilities.
 		input = escapeHtml(input);
 		userAgent = escapeHtml(userAgent);
 
 		return "Hello, " + input + "!<br><br>I am running " + serverInfo
-				+ ".<br><br>It looks like you are using:<br>" + userAgent+"<br><br>Authenticated User is: "+remoteUser+
-				"<br>";
+				+ ".<br><br>It looks like you are using:<br>" + userAgent
+				+ "<br><br>Authenticated User is: " + remoteUser + "<br><br>DataSource is: "+ds+"<br>";
 	}
 
 	/**
 	 * Escape an html string. Escaping data received from the client helps to
 	 * prevent cross-site script vulnerabilities.
 	 * 
-	 * @param html the html string to escape
+	 * @param html
+	 *            the html string to escape
 	 * @return the escaped string
 	 */
 	private String escapeHtml(String html) {
@@ -56,9 +63,9 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 
 	public void logoff() {
 		HttpServletRequest request = getThreadLocalRequest();
-		String remoteUser = request.getRemoteUser();
-		if (remoteUser != null) {
-			request.getSession().invalidate();
+		if (request.getRemoteUser() != null) {
+			HttpSession session = request.getSession(false);
+			if (session != null) session.invalidate();
 		}
 	}
 }

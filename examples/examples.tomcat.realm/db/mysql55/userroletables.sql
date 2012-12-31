@@ -1,7 +1,7 @@
-<!-- DB is assumed to be named 'authority'.  If another DB name is  -->
+<!-- DB is assumed to be named 'xtolmasters'.  If another DB name is  -->
 <!-- used, then the information in the <tomcathome>/conf/server.xml -->
 <!-- under the Realm element, connectionURL should be changed from  -->
-<!-- jdbc:mysql://localhost/authority?user=root       to            -->
+<!-- jdbc:mysql://localhost/xtolmasters?user=root       to            -->
 <!-- jdbc:mysql://localhost/<newdbname>?user=root                   -->
 
 create table users (
