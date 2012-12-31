@@ -30,7 +30,8 @@ public class Examples_gwt_authgreetings implements EntryPoint {
 			+ "connection and try again.";
 
 	/**
-	 * Create a remote service proxy to talk to the server-side Greeting service.
+	 * Create a remote service proxy to talk to the server-side Greeting
+	 * service.
 	 */
 	private final GreetingServiceAsync greetingService = GWT
 			.create(GreetingService.class);
@@ -40,7 +41,7 @@ public class Examples_gwt_authgreetings implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 		final Button logoffButton = new Button("Logoff");
-		
+
 		final Button sendButton = new Button("Send");
 		final TextBox nameField = new TextBox();
 		nameField.setText("GWT User");
@@ -55,7 +56,7 @@ public class Examples_gwt_authgreetings implements EntryPoint {
 		RootPanel.get("sendButtonContainer").add(sendButton);
 		RootPanel.get("errorLabelContainer").add(errorLabel);
 		RootPanel.get("logoffButtonContainer").add(logoffButton);
-		
+
 		// Focus the cursor on the name field when the app loads
 		nameField.setFocus(true);
 		nameField.selectAll();
@@ -107,7 +108,8 @@ public class Examples_gwt_authgreetings implements EntryPoint {
 			}
 
 			/**
-			 * Send the name from the nameField to the server and wait for a response.
+			 * Send the name from the nameField to the server and wait for a
+			 * response.
 			 */
 			private void sendNameToServer() {
 				// First, we validate the input.
@@ -151,23 +153,72 @@ public class Examples_gwt_authgreetings implements EntryPoint {
 		MyHandler handler = new MyHandler();
 		sendButton.addClickHandler(handler);
 		nameField.addKeyUpHandler(handler);
-		
+
 		class LogoffHandler implements ClickHandler {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				greetingService.logoff(new AsyncCallback<Void> () {
+				greetingService.logoff(new AsyncCallback<Void>() {
 					@Override
 					public void onFailure(Throwable caught) {
-						// Should report error here
+						dialogBox.setText("Logout - Failure");
+						serverResponseLabel
+								.addStyleName("serverResponseLabelError");
+						serverResponseLabel.setHTML(prepareHTMLFromException(0,
+								caught));
+						dialogBox.center();
+						closeButton.setFocus(true);
 					}
+
 					@Override
 					public void onSuccess(Void result) {
-					}});
+						dialogBox.setText("Logout - Success");
+						serverResponseLabel
+								.addStyleName("serverResponseLabelError");
+						serverResponseLabel.setHTML("Logout succeeded");
+						dialogBox.center();
+						closeButton.setFocus(true);
+					}
+				});
 			}
 		}
-		
+
 		logoffButton.addClickHandler(new LogoffHandler());
-		
+
 	}
+
+	private String getPrefix(int level) {
+		StringBuffer result = new StringBuffer();
+		for (int i = 0; i < level; i++)
+			result.append("&nbsp;&nbsp;&nbsp;&nbsp;");
+		return result.toString();
+	}
+
+	private String prepareHTMLFromException(int level, Throwable caught) {
+		if (caught == null)
+			return "";
+		String prefix = getPrefix(level);
+		StringBuffer result = new StringBuffer(prefix);
+		result.append("Exception: " + caught.getMessage()).append("<br>");
+		StackTraceElement[] stackTrace = caught.getStackTrace();
+		if (stackTrace != null) {
+			for (int i = 0; i < stackTrace.length; i++) {
+				result.append(prepareHTMLFromSTE(level + 1, stackTrace[i]));
+				result.append("<br>");
+			}
+		}
+		Throwable cause = caught.getCause();
+		if (cause != null) {
+			result.append(prefix).append("Caused By:").append("<br>");
+			result.append(prepareHTMLFromException(level + 1, cause));
+		}
+		return result.toString();
+	}
+
+	private String prepareHTMLFromSTE(int level,
+			StackTraceElement stackTraceElement) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
