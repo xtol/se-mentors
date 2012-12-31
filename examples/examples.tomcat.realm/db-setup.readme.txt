@@ -1,0 +1,27 @@
+Tomcat7 DB Setup Documentation available online at 
+
+http://tomcat.apache.org/tomcat-7.0-doc/realm-howto.html
+
+The basic steps are
+
+1.  Start MySQL using XAMPP
+2.  Create a new database named 'xtolmasters'.  
+       a.  Start phpMyAdmin with MySQL Admin button in XAMPP.   
+       b.  Navigate to Databases tab
+       c.  Create a new database named 'xtolmasters' with default options via the Create button.
+3.  Create user and user_role tables.  
+       a. Start phpMyAdmin with MySQL Admin button in XAMPP.   
+       b. Use db/mysql55/userroletables.sql to create these tables.  
+          i.  Go to myPhpAdmin (click Admin on XAMPP control 
+              panel next to mysql), select the 'xtolmasters' database, 
+              click on 'SQL' tab at the top.  Paste the content from
+              the db/mysql55/userroletables.sql into the edit box, and click 'Go'.  
+              This should create the 'users' table and the 'user-roles' table.
+4.  Add mysql connector jar (in the project at tomcat7/lib/mysql-connector-java-5.1.22-bin.jar) to <tomcathome>/lib 
+    directory.
+5.  Use the AddUser.launch launch config to add a test user/password and roles.
+6.  Start Tomcat7
+
+See http://tomcat.apache.org/tomcat-7.0-doc/realm-howto.html for more details.
+
+
