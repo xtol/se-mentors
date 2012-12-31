@@ -1,0 +1,2 @@
+serviceClass: com.xtolmasters.examples.gwt.authgreetings.client.GreetingService
+path: B9BCF566300667C2E3761F20131C8B9C.gwt.rpc

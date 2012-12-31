@@ -1,0 +1,3 @@
+# Module examples_gwt_authgreetings
+# RPC service class, partial path of RPC policy file
+com.xtolmasters.examples.gwt.authgreetings.client.GreetingService, B9BCF566300667C2E3761F20131C8B9C.gwt.rpc
