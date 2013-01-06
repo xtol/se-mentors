@@ -102,7 +102,7 @@ public class AddUser extends XTOLMastersDBUtil {
 
 	public static void main(String[] args) throws Exception {
 		AddUser addUser = new AddUser();
-		if (args.length < 2)
+		if (args.length < 6)
 			usage();
 		boolean parseResult = addUser.processArgs(args);
 		if (!parseResult)
