@@ -55,7 +55,7 @@ public class XTOLMastersDBUtil {
 			} else if ("-roletable".equals(args[i])) {
 				this.roletable = args[i + 1];
 				i++;
-			} else if ("- usernamefield".equals(args[i])) {
+			} else if ("-usernamefield".equals(args[i])) {
 				this.usernamefield = args[i + 1];
 				i++;
 			} else if ("-userpassfield".equals(args[i])) {
