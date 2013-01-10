@@ -17,7 +17,7 @@ import com.medicus.webserver.db.util.XTOLDBUtil;
 /**
  * Servlet implementation class UserDBHttpServlet
  */
-@WebServlet("/UserDBHttpServlet")
+@WebServlet("/Users")
 public class UserDBHttpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -40,8 +40,6 @@ public class UserDBHttpServlet extends HttpServlet {
 		// This method will be called by clients when they wish to access the
 		// data for a single user
 		// or a list of all users
-		System.out.println("doGet ds=" + ds);
-		
 		try {
 			Collection<String> usernames = dbUtil.getUserNames();
 			// For this, just write out the usernames
