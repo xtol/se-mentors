@@ -1,0 +1,11 @@
+<Context>
+	<!-- This is the user database for XTOL's Software Engineering Course -->
+	<Realm className="org.apache.catalina.realm.JDBCRealm"
+		driverName="org.gjt.mm.mysql.Driver" connectionURL="jdbc:mysql://localhost:3306/xtolmasters?user=root"
+		userTable="users" userNameCol="user_name" userCredCol="user_pass"
+		userRoleTable="user_roles" roleNameCol="role_name" />
+
+	<Resource name="jdbc/xtolmasters" auth="Container" type="javax.sql.DataSource"
+		maxActive="100" maxIdle="30" maxWait="10000" username="root" password=""
+		driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/xtolmasters" />
+</Context>
