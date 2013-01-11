@@ -37,16 +37,18 @@ public class UserDBHttpServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// This method will be called by clients when they wish to access the
-		// data for a single user
-		// or a list of all users
+		// Get authenticated user
+		String user = request.getRemoteUser();
+		// Get usernames via dbUtil
+		Collection<String> usernames = null;
 		try {
-			Collection<String> usernames = dbUtil.getUserNames();
-			// For this, just write out the usernames
-			response.getWriter().write(usernames.toString());
+			usernames = dbUtil.getUserNames();
 		} catch (SQLException e) {
 			throw new ServletException("Database error accessing DataSource ds="+ds);
 		}
+		
+		response.getWriter().write("<h2>Logged in user is: "+user+"</hr><br>");
+		response.getWriter().write("<h2>Usernames from db: "+usernames.toString()+"</h2>");
 	}
 
 	/**
