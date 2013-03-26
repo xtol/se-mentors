@@ -17,6 +17,7 @@ import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.Window;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -25,7 +26,9 @@ public class Msit_jntu_hms1 implements EntryPoint {
 	/**
 	 * The message displayed to the user when the server cannot be reached or
 	 * returns an error.
-	 */public void onModuleLoad() {
+	 */
+	 GreetingServiceAsync a1 = GWT.create(GreetingService.class);
+	public void onModuleLoad() {
 			// TODO Auto-generated method stub
 			// login 
 			final Label Loginlb=new Label("Email");
@@ -70,6 +73,39 @@ public class Msit_jntu_hms1 implements EntryPoint {
 			RootPanel.get("SignUpButton").add(SignUpButton);
 			
 			//registration ended
+			
+			
+			LoginButton.addClickHandler(new ClickHandler() 
+			    {
+			     public void onClick(ClickEvent event) 
+			     {
+			       String s1=LoginEmail.getText();
+			       String s2=LoginPwd.getText();
+			       
+			      a1.check(s1,s2, new AsyncCallback<String>() 
+			     {
+			  
+			    @Override
+			    public void onSuccess(String result) 
+			    {
+			     // TODO Auto-generated method stub
+			     if(result.equals("yes")){
+			     Window.alert("Result ok");}
+			     else
+			     {
+			    	 Window.alert("Result not ok");
+			     }
+			   
+			    }
+			  
+			    @Override
+			    public void onFailure(Throwable caught) {
+			    	
+			     Window.alert("Result not ok");
+			    }
+			   });
+			     }
+			    });
 			
 			class MyHandler implements ClickHandler, KeyUpHandler 
 			{

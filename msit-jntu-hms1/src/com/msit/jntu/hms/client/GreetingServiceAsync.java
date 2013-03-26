@@ -5,7 +5,9 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 /**
  * The async counterpart of <code>GreetingService</code>.
  */
-public interface GreetingServiceAsync {
-	void greetServer(String input, AsyncCallback<String> callback)
-			throws IllegalArgumentException;
+public interface GreetingServiceAsync 
+{
+	void check(String name,String password, AsyncCallback<String> callback);
+	void newuser(String name,String password,AsyncCallback<String> callback) throws IllegalArgumentException;
+
 }
