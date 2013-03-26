@@ -1,0 +1,106 @@
+package com.msit.jntu.hms.client;
+
+import com.msit.jntu.hms.shared.FieldVerifier;
+import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.KeyCodes;
+import com.google.gwt.event.dom.client.KeyUpEvent;
+import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.PasswordTextBox;
+import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.VerticalPanel;
+
+/**
+ * Entry point classes define <code>onModuleLoad()</code>.
+ */
+public class Msit_jntu_hms1 implements EntryPoint {
+	/**
+	 * The message displayed to the user when the server cannot be reached or
+	 * returns an error.
+	 */public void onModuleLoad() {
+			// TODO Auto-generated method stub
+			// login 
+			final Label Loginlb=new Label("Email");
+			final Label Pwdlb=new Label("Password");
+			final TextBox LoginEmail = new TextBox();
+			final PasswordTextBox  LoginPwd=  new PasswordTextBox();
+			final Button LoginButton = new Button("LogIn");
+			RootPanel.get("LoginEmail").add(LoginEmail);
+			RootPanel.get("LoginPwd").add(LoginPwd);
+			RootPanel.get("LoginButton").add(LoginButton);
+			RootPanel.get("Loginlb").add(Loginlb);
+			RootPanel.get("Pwdlb").add(Pwdlb);
+			//login ended
+			
+			
+			//registration
+			final Label Fnamelb=new Label("First Name");
+			final Label Mnamelb=new Label("Middle Name");
+			final Label Lnamelb=new Label("Last Name");
+			final Label	EnterEmaillb=new Label("Enter Your Email");
+			final Label ReenterEmaillb=new Label("Re-enter Email");
+			final Button SignUpButton = new Button("SIGNUP");
+			final Label errorLabel = new Label();
+			
+			final TextBox FnameTextBox = new TextBox();
+			final TextBox MnameTextBox = new TextBox();
+			final TextBox LnameTextBox = new TextBox();
+			final TextBox EnterEmailTextBox = new TextBox();
+			final TextBox ReenterEmailTextBox = new TextBox();
+			
+			RootPanel.get("errorLabel").add(errorLabel);
+			RootPanel.get("Fnamelb").add(Fnamelb);
+			RootPanel.get("Mnamelb").add(Mnamelb);
+			RootPanel.get("Lnamelb").add(Lnamelb);
+			RootPanel.get("EnterEmaillb").add(EnterEmaillb);
+			RootPanel.get("ReenterEmaillb").add(ReenterEmaillb);
+			RootPanel.get("FnameTextBox").add(FnameTextBox);
+			RootPanel.get("MnameTextBox").add(MnameTextBox);
+			RootPanel.get("LnameTextBox").add(LnameTextBox);
+			RootPanel.get("EnterEmailTextBox").add(EnterEmailTextBox);
+			RootPanel.get("ReenterEmailTextBox").add(ReenterEmailTextBox);
+			RootPanel.get("SignUpButton").add(SignUpButton);
+			
+			//registration ended
+			
+			class MyHandler implements ClickHandler, KeyUpHandler 
+			{
+				/**
+				 * Fired when the user clicks on the sendButton.
+				 */
+				public void onClick(ClickEvent event) {
+					sendNameToServer();
+				}
+				public void onKeyUp(KeyUpEvent event) {
+					// TODO Auto-generated method stub
+					if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
+						sendNameToServer();
+					}
+				}
+				private void sendNameToServer() {
+					// TODO Auto-generated method stub
+					// First, we validate the input.
+					errorLabel.setText("");
+					String textToServer = FnameTextBox.getText();
+					if (!FieldVerifier.isValidName(textToServer)) {
+						errorLabel.setText("Please enter at least four characters");
+						return;
+					}
+					
+				}
+
+				
+				
+			}
+			MyHandler handler = new MyHandler();
+			SignUpButton.addClickHandler(handler);
+	}
+}

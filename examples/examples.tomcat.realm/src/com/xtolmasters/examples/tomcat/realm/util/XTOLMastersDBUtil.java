@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class XTOLMastersDBUtil {
 
 	public static final String DEFAULT_DBNAME = "xtolmasters";
-	public static final String DEFAULT_CONNECTION_URL = "jdbc:mysql://localhost/"+DEFAULT_DBNAME+"?user=root";
+	public static final String DEFAULT_CONNECTION_URL = "jdbc:mysql://localhost:3306/"+DEFAULT_DBNAME+"?user=root";
 	public static final String DEFAULT_USERTABLE = "users";
 	public static final String DEFAULT_USERNAME_FIELD = "user_name";
 	public static final String DEFAULT_USERPASS_FIELD = "user_pass";

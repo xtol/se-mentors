@@ -1,0 +1,2 @@
+serviceClass: com.msit.jntu.hms.client.GreetingService
+path: 5924E09BC05F29A24F34D0DD9E67A92C.gwt.rpc
