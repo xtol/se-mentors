@@ -15,8 +15,16 @@
     <servlet-name>greetServlet</servlet-name>
     <url-pattern>/msit_jntu_hms1/greet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>greetRegistrationServlet</servlet-name>
+    <servlet-class>com.msit.jntu.hms.server.GreetingServiceRegistrationImpl</servlet-class>
+  </servlet>
   
-  <!-- Default page to serve -->
+  <servlet-mapping>
+    <servlet-name>greetRegistrationServlet</servlet-name>
+    <url-pattern>/msit_jntu_hms1/greetRegistration</url-pattern>
+  </servlet-mapping>
+<!--   Default page to serve -->
   <welcome-file-list>
     <welcome-file>Msit_jntu_hms1.html</welcome-file>
   </welcome-file-list>
