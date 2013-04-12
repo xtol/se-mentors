@@ -1,19 +1,20 @@
 package com.msit.jntu.hms.server;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-import com.msit.jntu.hms.client.GreetingService;
-import com.msit.jntu.hms.client.GreetingServiceRegistration;
-import com.msit.jntu.hms.shared.FieldVerifier;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import com.msit.jntu.hms.client.GreetingServiceRegistration;
 
 /**
  * The server side implementation of the RPC service.
  */
 @SuppressWarnings("serial")
-public class GreetingServiceRegistrationImpl extends RemoteServiceServlet implements
-GreetingServiceRegistration {
+public class GreetingServiceRegistrationImpl extends RemoteServiceServlet
+		implements GreetingServiceRegistration {
 
 	Connection con = null;
 	Statement st = null;
@@ -39,14 +40,16 @@ GreetingServiceRegistration {
 	}
 
 	@Override
-	public String check(String firstName, String middleName,String lastName, String email, String reEmail) {
+	public String check(String firstName, String middleName, String lastName,
+			String email, String reEmail) {
 		// TODO Auto-generated method stub
 
 		call();
 
 		try {
 
-			rs = st.executeQuery("select * from registration_page where email='" + email+ "'");
+			rs = st.executeQuery("select * from registration_page where email='"
+					+ email + "'");
 
 			if (rs.next()) {
 				ss = "yes";
@@ -66,23 +69,22 @@ GreetingServiceRegistration {
 	}
 
 	@Override
-	public String newuser(String firstName, String middleName,String lastName, String email, String reEmail) {
+	public String newuser(String firstName, String middleName, String lastName,
+			String email, String reEmail) {
 		String ss = "no";
 		call();
 		System.out.println("hi in new user");
 
 		try {
-			boolean ss1;
-			ss1 = st.execute("insert into registration_page values('" + firstName + "','"
-					+ middleName + "','" + lastName + "','"
-					+ email + "','"
-					+ reEmail + "')");
-			//Window.alert("hi in new user");
+			st.execute("insert into registration_page values('"
+					+ firstName + "','" + middleName + "','" + lastName + "','"
+					+ email + "','" + reEmail + "')");
+			// Window.alert("hi in new user");
 			System.out.println("hi in new user");
-			//if (ss1) {
+			// if (ss1) {
 
-				ss = "yes";
-			//}
+			ss = "yes";
+			// }
 
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());

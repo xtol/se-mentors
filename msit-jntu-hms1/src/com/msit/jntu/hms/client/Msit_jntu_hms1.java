@@ -1,6 +1,5 @@
 package com.msit.jntu.hms.client;
 
-import com.msit.jntu.hms.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -8,16 +7,14 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.DialogBox;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
-import com.google.gwt.user.client.ui.VerticalPanel;
-import com.google.gwt.user.client.Window;
+import com.msit.jntu.hms.shared.FieldVerifier;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -103,6 +100,7 @@ public class Msit_jntu_hms1 implements EntryPoint {
 			}
 		});
 
+		@SuppressWarnings("unused")
 		class MyHandler implements ClickHandler, KeyUpHandler {
 			/**
 			 * Fired when the user clicks on the sendButton.
@@ -139,59 +137,58 @@ public class Msit_jntu_hms1 implements EntryPoint {
 				final String s3 = LnameTextBox.getText();
 				final String s4 = EnterEmailTextBox.getText();
 				final String s5 = ReenterEmailTextBox.getText();
-				a2.newuser(s1, s2, s3, s4, s5,
-						new AsyncCallback<String>() {
+				a2.newuser(s1, s2, s3, s4, s5, new AsyncCallback<String>() {
 
-							@Override
-							public void onSuccess(String result) {
-								// TODO Auto-generated method stub
-								if (result.equals("yes")) {
-									Window.alert("New User Added");
-								}
-							}
+					@Override
+					public void onSuccess(String result) {
+						// TODO Auto-generated method stub
+						if (result.equals("yes")) {
+							Window.alert("New User Added");
+						}
+					}
 
-							@Override
-							public void onFailure(Throwable caught) {
-								// TODO Auto-generated method stub
-								caught.printStackTrace();
-								Window.alert("No user aadded");
-							}
-						});
+					@Override
+					public void onFailure(Throwable caught) {
+						// TODO Auto-generated method stub
+						caught.printStackTrace();
+						Window.alert("No user aadded");
+					}
+				});
 
-//				a2.check(s1, s2, s3, s4, s5, new AsyncCallback<String>() {
-//
-//					@Override
-//					public void onSuccess(String result) {
-//						// TODO Auto-generated method stub
-//
-//						if (result.equals("yes")) {
-//							Window.alert("Result not ok");
-//						}
-//
-//					}
-//
-//					@Override
-//					public void onFailure(Throwable caught) {
-//						a2.newuser(s1, s2, s3, s4, s5,
-//								new AsyncCallback<String>() {
-//
-//									@Override
-//									public void onSuccess(String result) {
-//										// TODO Auto-generated method stub
-//										if (result.equals("yes")) {
-//											Window.alert("New User Added");
-//										}
-//									}
-//
-//									@Override
-//									public void onFailure(Throwable caught) {
-//										// TODO Auto-generated method stub
-//										Window.alert("No user aadded");
-//									}
-//								});
-//						//Window.alert("Result not ok");
-//					}
-//				});
+				// a2.check(s1, s2, s3, s4, s5, new AsyncCallback<String>() {
+				//
+				// @Override
+				// public void onSuccess(String result) {
+				// // TODO Auto-generated method stub
+				//
+				// if (result.equals("yes")) {
+				// Window.alert("Result not ok");
+				// }
+				//
+				// }
+				//
+				// @Override
+				// public void onFailure(Throwable caught) {
+				// a2.newuser(s1, s2, s3, s4, s5,
+				// new AsyncCallback<String>() {
+				//
+				// @Override
+				// public void onSuccess(String result) {
+				// // TODO Auto-generated method stub
+				// if (result.equals("yes")) {
+				// Window.alert("New User Added");
+				// }
+				// }
+				//
+				// @Override
+				// public void onFailure(Throwable caught) {
+				// // TODO Auto-generated method stub
+				// Window.alert("No user aadded");
+				// }
+				// });
+				// //Window.alert("Result not ok");
+				// }
+				// });
 			}
 		});
 
