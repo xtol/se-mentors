@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.SignupService
+path: 3950CC0485927AE4BE885F49E92B6ABE.gwt.rpc

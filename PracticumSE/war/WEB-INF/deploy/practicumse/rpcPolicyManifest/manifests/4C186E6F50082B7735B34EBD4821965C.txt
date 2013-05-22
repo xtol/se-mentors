@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.ReturnService
+path: 9D088C104B84495AC20619CB894A6182.gwt.rpc

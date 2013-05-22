@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.ForgotService
+path: 08B420AA27D5C759873DB9DCAB4D9FF6.gwt.rpc

@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.SearchFriendService
+path: D48F17BAD84B2F447503C40323EDEBAB.gwt.rpc

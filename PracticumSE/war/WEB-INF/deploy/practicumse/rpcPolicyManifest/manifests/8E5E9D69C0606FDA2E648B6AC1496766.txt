@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.UserDetailsService
+path: 19A50EE6C0AEA290FD6111FE316CC609.gwt.rpc

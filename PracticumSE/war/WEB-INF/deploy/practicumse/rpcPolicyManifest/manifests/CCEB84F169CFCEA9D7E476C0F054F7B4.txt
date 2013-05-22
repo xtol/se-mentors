@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.SendMailService
+path: BF6B8B646062A18C4DFCF29545843462.gwt.rpc

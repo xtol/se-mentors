@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.LoginService
+path: DC95C049EE60F94C901EC2F0A76DA8A9.gwt.rpc

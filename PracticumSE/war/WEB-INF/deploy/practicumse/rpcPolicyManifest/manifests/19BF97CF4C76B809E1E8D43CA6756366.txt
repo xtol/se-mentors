@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.FriendDetailsService
+path: 0374EDDED8AA2B180E3BCEC31261485B.gwt.rpc

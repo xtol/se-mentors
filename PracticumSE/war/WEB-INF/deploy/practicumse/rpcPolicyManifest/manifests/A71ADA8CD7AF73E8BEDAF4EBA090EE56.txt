@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.MailService
+path: 1BE9019B94FA0326C472D21C848B9CAA.gwt.rpc

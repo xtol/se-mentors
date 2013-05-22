@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.RegistrationService
+path: 303179C51D6D8E7A5293F5B36911B972.gwt.rpc
