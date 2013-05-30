@@ -10,9 +10,9 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 /**
  * @author sajja sai prasanna
- *
+ * 
  */
 public interface SearchFriendServiceAsync {
-		 Request getNames(String email, AsyncCallback<ArrayList<String>> callback); 
+	Request getNames(String email, AsyncCallback<ArrayList<String>> callback);
 
 }

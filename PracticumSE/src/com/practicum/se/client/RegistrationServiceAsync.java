@@ -4,7 +4,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface RegistrationServiceAsync {
 
-	
 	void newuser(String firstName, String middleName, String lastName,
 			String email, String code, AsyncCallback<String> callback);
 

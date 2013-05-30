@@ -15,26 +15,22 @@ import nl.captcha.servlet.CaptchaServletUtil;
 import nl.captcha.servlet.SimpleCaptchaServlet;
 
 public class ExtendedCaptchaServlet extends SimpleCaptchaServlet {
-	
-	private static final long serialVersionUID = 6560171562324177699L;
-	
-	@Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-		
-        HttpSession session = req.getSession();
-        
-        Captcha captcha = new Captcha.Builder(_width, _height)
-	        	.addText()
-	        	.addBackground(new GradiatedBackgroundProducer())
-	            .gimp()
-	            .addNoise()
-	            .addBorder()
-	            .build();
 
-        session.setAttribute(NAME, captcha);
-        CaptchaServletUtil.writeImage(resp, captcha.getImage());
-        
-    }
-	
+	private static final long serialVersionUID = 6560171562324177699L;
+
+	@Override
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+
+		HttpSession session = req.getSession();
+
+		Captcha captcha = new Captcha.Builder(_width, _height).addText()
+				.addBackground(new GradiatedBackgroundProducer()).gimp()
+				.addNoise().addBorder().build();
+
+		session.setAttribute(NAME, captcha);
+		CaptchaServletUtil.writeImage(resp, captcha.getImage());
+
+	}
+
 }

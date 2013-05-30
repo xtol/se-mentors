@@ -10,13 +10,11 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 /**
  * @author sajja sai prasanna
- *
+ * 
  */
 @RemoteServiceRelativePath("searchFriend")
-public interface SearchFriendService extends RemoteService 
-{
+public interface SearchFriendService extends RemoteService {
 
 	ArrayList<String> getNames(String email);
 
-	
 }

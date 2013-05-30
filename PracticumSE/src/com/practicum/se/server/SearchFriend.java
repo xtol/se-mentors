@@ -1,7 +1,12 @@
 package com.practicum.se.server;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.practicum.se.client.SearchFriendService;
 
@@ -10,13 +15,13 @@ import com.practicum.se.client.SearchFriendService;
  */
 @SuppressWarnings("serial")
 public class SearchFriend extends RemoteServiceServlet implements
-SearchFriendService {
+		SearchFriendService {
 
 	Connection con = null;
 	Statement st = null;
 
 	ResultSet rs = null;
-	ArrayList<String>  ss = new ArrayList<String>();
+	ArrayList<String> ss = new ArrayList<String>();
 
 	String url = "jdbc:mysql://localhost:3306/hospitalmanagement";
 
@@ -35,7 +40,6 @@ SearchFriendService {
 		}
 	}
 
-
 	@Override
 	public ArrayList<String> getNames(String email) {
 		// TODO Auto-generated method stub
@@ -43,27 +47,25 @@ SearchFriendService {
 
 		try {
 
-			rs = st.executeQuery(" select username from reg_page2 where not username='" + email+ "'");
+			rs = st.executeQuery(" select username from reg_page2 where not username='"
+					+ email + "'");
 
-			while (rs.next()) 
-			{
-				
+			while (rs.next()) {
+
 				ss.add(rs.getString(1));
-				//System.out.println(rs.getString(1));
-				//System.out.println(rs.getString(1));
+				// System.out.println(rs.getString(1));
+				// System.out.println(rs.getString(1));
 			}
 
-			//System.out.println(ss);
+			// System.out.println(ss);
 
 		} catch (SQLException e) {
 			System.out.println("kill" + e.getMessage());
 
 		}
-		
+
 		return ss;
-		//return null;
+		// return null;
 	}
 
-	
 }
-
