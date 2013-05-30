@@ -1,53 +1,23 @@
 package com.practicum.se.server;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.practicum.se.client.ReturnService;
 
 @SuppressWarnings("serial")
-public class ReturnServiceImp extends RemoteServiceServlet implements
+public class ReturnServiceImp extends DataSourceRemoteServiceServlet implements
 		ReturnService {
 
-	Connection con = null;
-	Statement st = null;
-	// Statement =null;
-
-	ResultSet rs = null;
-
-	String ss = "no";
-	String password = null;
-	// System.out.println(password);
-	String url = "jdbc:mysql://localhost:3306/hospitalmanagement";
-
-	public void call() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			System.out.print(e.getMessage());
-		}
-		try {
-			con = DriverManager.getConnection(url, "root", "root");
-			st = con.createStatement();
-			System.out.println("hello connection done");
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-	}
+	private ResultSet rs = null;
+	private String ss = "no";
+	private String password = null;
 
 	@Override
 	public String pass(String c1) {
-		// TODO Auto-generated method stub
-
-		call();
-
 		try {
 
-			rs = st.executeQuery("select password from reg_page2 where email='"
+			rs = createStatement().executeQuery("select password from reg_page2 where email='"
 					+ c1 + "'");
 
 			if (rs.next()) {

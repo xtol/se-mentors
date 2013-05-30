@@ -1,51 +1,22 @@
 package com.practicum.se.server;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.practicum.se.client.LoginService;
 
-public class LoginServiceImp extends RemoteServiceServlet implements
+public class LoginServiceImp extends DataSourceRemoteServiceServlet implements
 		LoginService {
 
-	Connection con = null;
-	Statement st = null;
-
-	ResultSet rs = null;
-
-	String ss = "no";
-	String url = "jdbc:mysql://localhost:3306/hospitalmanagement";
-
-	public void call() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			System.out.print(e.getMessage());
-		}
-		try {
-			con = DriverManager.getConnection(url, "root", "root");
-			st = con.createStatement();
-			System.out.println("hello connection done");
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-	}
+	private static final long serialVersionUID = -1670710851578845238L;
+	private ResultSet rs;
+	private String ss;
 
 	@Override
 	public String check(String s1, String s2) {
-		// TODO Auto-generated method stub
-
-		call();
-
 		try {
-
-			rs = st.executeQuery("select * from reg_page2 where email='" + s1
+			rs = createStatement().executeQuery("select * from reg_page2 where email='" + s1
 					+ "' and password='" + s2 + "'");
-
 			if (rs.next()) {
 				ss = "yes";
 				System.out.println(rs.getString(0));
@@ -58,7 +29,6 @@ public class LoginServiceImp extends RemoteServiceServlet implements
 			System.out.println("kill" + e.getMessage());
 
 		}
-
 		return ss;
 	}
 

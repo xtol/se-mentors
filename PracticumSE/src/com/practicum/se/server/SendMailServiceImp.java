@@ -16,10 +16,12 @@ import com.practicum.se.client.SendMailService;
 public class SendMailServiceImp extends RemoteServiceServlet implements
 		SendMailService {
 
+	private static final long serialVersionUID = 3880131608918763905L;
+
 	public String sendMail(String sendto, String message_mi) {
 		// TODO Auto-generated method stub
 		// Recipient's email ID needs to be mentioned.
-		String sender_email = "twinkletalways@gmail.com", sender_password = "Twinkleall", sender_host = "smtp.gmail.com", sender_port = "465", reciever_id = sendto, subject_to_be_given = "Authentication Email verification";
+		String sender_email = "twinkletalways@gmail.com", sender_host = "smtp.gmail.com", sender_port = "465", reciever_id = sendto, subject_to_be_given = "Authentication Email verification";
 		// message_mi = "Welcome to TF4U.";
 		String st = "true";
 
@@ -35,7 +37,6 @@ public class SendMailServiceImp extends RemoteServiceServlet implements
 				"javax.net.ssl.SSLSocketFactory");
 		props.put("mail.smtp.socketFactory.fallb", "false");
 
-		SecurityManager security = System.getSecurityManager();
 		System.out.println(reciever_id);
 		try {
 			Authenticator auth = new SMTPAuthenticator();

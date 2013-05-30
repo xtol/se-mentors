@@ -1,57 +1,39 @@
 package com.practicum.se.server;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.practicum.se.client.FriendDetailsService;
 
-public class FriendDetailsServiceImp extends RemoteServiceServlet implements
-		FriendDetailsService {
-	Connection con = null;
-	Statement st = null;
-	Statement st1 = null;
+public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
+		implements FriendDetailsService {
+	private static final long serialVersionUID = 1181258670247629871L;
+	private Statement st;
+	private Statement st1;
 
-	ResultSet rs = null;
-	ResultSet rs1 = null;
+	private ResultSet rs;
+	private ResultSet rs1;
 
-	Statement st2 = null;
-	ResultSet rs2 = null;
+	private Statement st2;
+	private ResultSet rs2;
 
-	HashMap<String, String> hm = new HashMap<String, String>();
-	String url = "jdbc:mysql://localhost:3306/hospitalmanagement";
+	private HashMap<String, String> hm = new HashMap<String, String>();
 
-	String email = null;
+	private String email = null;
 
-	public void call() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			System.out.print(e.getMessage());
-		}
-		try {
-			con = DriverManager.getConnection(url, "root", "root");
-			st = con.createStatement();
-			st1 = con.createStatement();
-			st2 = con.createStatement();
-			System.out.println("hello connection done fd");
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
+	private void prepare() throws SQLException {
+		st = createStatement();
+		st1 = createStatement();
+		st2 = createStatement();
+		System.out.println("hello connection done fd");
 	}
 
 	@Override
 	public HashMap<String, String> FriendDetails(String uname) {
-		// TODO Auto-generated method stub
-		call();
-
-		try
-
-		{
+		try	{
+			prepare();
 			hm.clear();
 			System.out.println("---->" + uname);
 			rs2 = st2
