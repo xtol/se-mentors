@@ -12,25 +12,39 @@ public class RegistrationServiceImp extends DataSourceRemoteServiceServlet imple
 	private ResultSet rs;
 	private String ss;
 
-	@Override
-	public String newuser(String firstName, String middleName, String lastName,
-			String email, String code) {
+	
+	
+	public String newuser(String firstName, String middleName,String lastName, String email, String code )
+	{
 		String ss = "no";
+		
 		System.out.println("hi in new user");
 
 		try {
 			boolean ss1;
-
-			ss1 = createStatement().execute("insert into reg_page values('" + firstName
-					+ "','" + middleName + "','" + lastName + "','" + email
-					+ "','" + code + "')");
-
-			// Window.alert("hi in new user");
-			System.out.println("hi in new user---ss1" + ss1);
-			if (!ss1) {
-				ss = "yes";
-
+			
+			rs = createStatement().executeQuery(" select * from reg_page where email='" + email+ "'");
+			if(rs.next())
+			{
+				System.out.println("in if");
+				return ss;
 			}
+			else{
+				System.out.println("in else");
+			ss1 = createStatement().execute("insert into reg_page values('" + firstName + "','"
+					+ middleName + "','" + lastName + "','"
+					+ email + "','"
+					+ code + "')");
+			
+			
+			//Window.alert("hi in new user");
+			System.out.println("hi in new user---ss1"+ss1);
+				if(!ss1)
+				{
+				ss = "yes";
+				
+				}
+			}		
 
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -38,8 +52,10 @@ public class RegistrationServiceImp extends DataSourceRemoteServiceServlet imple
 
 		}
 		return ss;
-
+		
 	}
+	
+	
 
 	@Override
 	public String newuser1(String username, String gender, String country,

@@ -1,0 +1,2 @@
+serviceClass: com.practicum.se.client.ReSendCode
+path: B44820EF4343332C216886DB9CF083E0.gwt.rpc

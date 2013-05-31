@@ -11,7 +11,7 @@ public class LoginServiceImp extends DataSourceRemoteServiceServlet implements
 	private static final long serialVersionUID = -1670710851578845238L;
 	private ResultSet rs;
 	private String ss;
-
+	
 	@Override
 	public String check(String s1, String s2) {
 		try {
@@ -30,6 +30,21 @@ public class LoginServiceImp extends DataSourceRemoteServiceServlet implements
 
 		}
 		return ss;
+	}
+	public void updateCode(String email, String code) {
+		// TODO Auto-generated method stub
+		try {
+			
+			
+			System.out.println("hello----"+email);
+			createStatement().executeUpdate("update reg_page set code_enter='"+code+"' where email='" + email+ "'");
+			System.out.println("in ReSendCOde--->"+email);
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }
