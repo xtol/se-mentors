@@ -1,15 +1,10 @@
-/**
- * 
- */
+
 package com.practicum.se.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
-/**
- * @author sajja sai prasanna
- * 
- */
+
 @RemoteServiceRelativePath("UDetails")
 public interface UserDetailsService extends RemoteService {
 	String getUsername(String email);

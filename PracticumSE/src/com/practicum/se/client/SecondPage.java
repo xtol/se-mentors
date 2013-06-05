@@ -5,19 +5,16 @@ import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
-import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Hyperlink;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TabPanel;
@@ -224,10 +221,7 @@ public class SecondPage extends Composite{
 
 					
 					
-					 //NewUser n=new NewUser("sai");
-
-					 	//vp.clear();
-			        	 //vp.add(n);
+					
 				}
 			});
 			LoginButton.addClickHandler(new ClickHandler() {
@@ -266,35 +260,21 @@ public class SecondPage extends Composite{
 							    
 							      tabPanel.setHeight("300px");
 							     
-							      //////////////////////////////////////////
-									//view details
+							      
 									test1 t1=new test1(s1);
 									 tabPanel.add(t1, tab1Title);
 									  tabPanel.selectTab(0);
 									 
-									 /////////////////////////////////////////////
-								
-								//////////////////////////////////////////
-								//search friend
+									 
 								UserAccount n=new UserAccount(s1);
 								tabPanel.add(n, tab2Title);
 							
 								 
-								 /////////////////////////////////////////////
 								
-								
-								
-								
-
-								//////////////////////////////////////////
 								
 								UpdateAccount n1=new UpdateAccount(s1);
 								tabPanel.add(n1, tab3Title);
-								// n1.setVisible(true);
-								 
-								 /* update public and private and edit details*/
-								 
-								 /////////////////////////////////////////////
+								
 								 
 								 
 									  vp.add(tabPanel);
@@ -322,7 +302,7 @@ public class SecondPage extends Composite{
 				@Override
 				public void onClick(ClickEvent event) {
 					// TODO Auto-generated method stub
-					//Window.alert("hi sai");
+					
 					vp.clear();
 					vp.add(hp1);
 					
@@ -333,13 +313,13 @@ public class SecondPage extends Composite{
 
 		public ExtendedPasswordTextBox() {
 			super();
-//			System.out.println("hhhh");
+
 			sinkEvents(Event.ONPASTE);
 		}
 
 		@Override
 		public void onBrowserEvent(Event event) {
-			//System.out.println("onBrowserEvent");
+			
 			super.onBrowserEvent(event);
 			switch (DOM.eventGetType(event)) {
 			case Event.ONPASTE:
@@ -355,13 +335,13 @@ public class SecondPage extends Composite{
 
 		public ExtendedTextBox() {
 			super();
-//			System.out.println("hhhh");
+
 			sinkEvents(Event.ONPASTE);
 		}
 
 		@Override
 		public void onBrowserEvent(Event event) {
-			//System.out.println("onBrowserEvent");
+			
 			super.onBrowserEvent(event);
 			switch (DOM.eventGetType(event)) {
 			case Event.ONPASTE:

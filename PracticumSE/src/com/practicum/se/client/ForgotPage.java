@@ -36,27 +36,25 @@ public class ForgotPage extends Composite {
 		fp.setWidget(1, 0, Loginlb1);
 		fp.setWidget(1, 1, LoginEmail1);
 		fp.setCellSpacing(20);
-		// absolutePanel.add(Loginlb1, 75, 47);
-		// absolutePanel.add(LoginEmail1, 75, 70);
+		
 
 		LoginButton1.setText("Submit");
 		fp.setWidget(2, 0, LoginButton1);
-		// absolutePanel.add(LoginButton1, 100, 150);
+		
 		LoginButton1.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				// absolutePanel.clear();
+				
 				final String c1 = LoginEmail1.getText();// put email id in c1
-				// final String password=null;
+				
 				f1.check(c1, new AsyncCallback<String>() {
 
 					@Override
 					public void onSuccess(String result) {
 						// TODO Auto-generated method stub
 						if (result.equals("yes")) {
-							// Window.alert("Result ok");
-							// Window.alert("your password is  " + password);
+							
 							r1.pass(c1, new AsyncCallback<String>() {
 
 								@Override
@@ -68,7 +66,7 @@ public class ForgotPage extends Composite {
 								@Override
 								public void onSuccess(String result) {
 									// TODO Auto-generated method stub
-									// Window.alert("Your password sent to your mail id");
+									
 									m.sendMail(c1, result,
 											new AsyncCallback<String>() {
 
@@ -76,7 +74,7 @@ public class ForgotPage extends Composite {
 												public void onFailure(
 														Throwable caught) {
 													// TODO Auto-generated
-													// method stub
+													
 													System.out.println(caught);
 
 												}
@@ -85,7 +83,7 @@ public class ForgotPage extends Composite {
 												public void onSuccess(
 														String result) {
 													// TODO Auto-generated
-													// method stub
+													
 													if (result.equals("true")) {
 														System.out
 																.println("hiiiiiiii testing in login screen");

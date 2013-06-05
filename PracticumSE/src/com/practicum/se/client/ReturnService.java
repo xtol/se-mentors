@@ -6,6 +6,6 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("Return")
 public interface ReturnService extends RemoteService {
 	String pass(String password);
-	// public pass();
+	
 
 }

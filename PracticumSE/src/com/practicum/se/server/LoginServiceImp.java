@@ -23,10 +23,8 @@ public class LoginServiceImp extends DataSourceRemoteServiceServlet implements
 				System.out.println(rs.getString(1));
 			} else {
 				ss = "no";
-				System.out.println(ss);
 			}
 		} catch (SQLException e) {
-			System.out.println("kill" + e.getMessage());
 
 		}
 		return ss;
@@ -34,9 +32,6 @@ public class LoginServiceImp extends DataSourceRemoteServiceServlet implements
 	public void updateCode(String email, String code) {
 		// TODO Auto-generated method stub
 		try {
-			
-			
-			System.out.println("hello----"+email);
 			createStatement().executeUpdate("update reg_page set code_enter='"+code+"' where email='" + email+ "'");
 			System.out.println("in ReSendCOde--->"+email);
 		

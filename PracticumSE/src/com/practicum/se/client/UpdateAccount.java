@@ -18,6 +18,7 @@ public class UpdateAccount extends Composite {
 	private VerticalPanel vp2 = new VerticalPanel();
 	UserDetailsServiceAsync a2 = GWT.create(UserDetailsService.class);
 
+	@SuppressWarnings("deprecation")
 	public UpdateAccount(final String s1) {
 		initWidget(this.vp2);
 		// TODO Auto-generated constructor stub
@@ -29,9 +30,9 @@ public class UpdateAccount extends Composite {
 		fp.setCellSpacing(10);
 		fp.addStyleName("pp");
 
-		// ///////username//////////////
+		
 		CheckBox cbUpUnametb = new CheckBox("Update Username");
-		cbUpUnametb.setChecked(false);
+		cbUpUnametb.setChecked(true);
 		final ListBox lUpuname = new ListBox();
 
 		final TextBox UpUnametb = new TextBox();

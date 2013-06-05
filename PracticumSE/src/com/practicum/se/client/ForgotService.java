@@ -7,5 +7,5 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 public interface ForgotService extends RemoteService {
 	String check(String name);
 
-	// String check(String name);
+	
 }

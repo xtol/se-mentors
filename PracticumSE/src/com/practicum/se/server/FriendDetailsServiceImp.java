@@ -27,7 +27,6 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 		st = createStatement();
 		st1 = createStatement();
 		st2 = createStatement();
-		System.out.println("hello connection done fd");
 	}
 
 	@Override
@@ -56,7 +55,6 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 									+ email + "'");
 					if (rs1.next()) {
 						hm.put("firstname", rs1.getString(1));
-						System.out.println("ffff---->" + rs1.getString(1));
 					}
 
 				}
@@ -70,7 +68,6 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 					if (rs1.next()) {
 						if (!rs1.getString(1).endsWith(""))
 							hm.put("middlename", rs1.getString(1));
-						System.out.println("ffff---->" + rs1.getString(1));
 					}
 				}
 
@@ -80,7 +77,6 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 									+ email + "'");
 					if (rs1.next())
 						hm.put("lastname", rs1.getString(1));
-					System.out.println("ffff---->" + rs1.getString(1));
 				}
 
 				if (rs.getString(5).equals("1")) {
@@ -89,7 +85,6 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 									+ email + "'");
 					if (rs1.next())
 						hm.put("username", rs1.getString(1));
-					System.out.println("ffff---->" + rs1.getString(1));
 				}
 
 				if (rs.getString(6).equals("1")) {
@@ -98,7 +93,6 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 									+ email + "'");
 					if (rs1.next())
 						hm.put("gender", rs1.getString(1));
-					System.out.println("ffff---->" + rs1.getString(1));
 				}
 
 				if (rs.getString(7).equals("1")) {
@@ -107,7 +101,6 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 									+ email + "'");
 					if (rs1.next())
 						hm.put("country", rs1.getString(1));
-					System.out.println("ffff---->" + rs1.getString(1));
 				}
 
 				if (rs.getString(8).equals("1")) {
@@ -117,7 +110,6 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 									+ email + "'");
 					if (rs1.next())
 						hm.put("city", rs1.getString(1));
-					System.out.println("ffff---->" + rs1.getString(1));
 				}
 
 				if (rs.getString(9).equals("1")) {
@@ -126,7 +118,6 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 									+ email + "'");
 					if (rs1.next())
 						hm.put("pincode", rs1.getString(1));
-					System.out.println("ffff---->" + rs1.getString(1));
 				}
 
 				if (rs.getString(10).equals("1")) {
@@ -135,7 +126,6 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 									+ email + "'");
 					if (rs1.next())
 						hm.put("address", rs1.getString(1));
-					System.out.println("ffff---->" + rs1.getString(1));
 				}
 
 				if (rs.getString(11).equals("1")) {
@@ -144,35 +134,23 @@ public class FriendDetailsServiceImp extends DataSourceRemoteServiceServlet
 									+ email + "'");
 					if (rs1.next())
 						hm.put("phonenum", rs1.getString(1));
-					System.out.println("ffff---->" + rs1.getString(1));
 				}
 
 				if (rs.getString(12).equals("1")
 						&& rs.getString(13).equals("1")
 						&& rs.getString(14).equals("1")) {
-					// System.out.println("for fname"+rs.getString(3));
 					rs1 = st1
 							.executeQuery("select date,month,year from reg_page2 where email='"
 									+ email + "'");
 					if (rs1.next())
 						hm.put("dob", rs1.getString(1) + "-" + rs1.getString(2)
 								+ "-" + rs1.getString(3));
-					System.out.println("ffff---->" + rs1.getString(1));
-					// System.out.println("for fname"+rs1.getString(3));
 				}
 
-				/*
-				 * Set<?> set = hm.entrySet(); // Get an iterator Iterator<?> i
-				 * = set.iterator(); // Display elements while(i.hasNext()) {
-				 * Map.Entry me = (Map.Entry)i.next();
-				 * System.out.print(me.getKey() + ": ");
-				 * System.out.println(me.getValue()); }
-				 */
 			} else {
 
 			}
 		} catch (SQLException e) {
-			System.out.println("kill" + e.getMessage());
 
 		}
 

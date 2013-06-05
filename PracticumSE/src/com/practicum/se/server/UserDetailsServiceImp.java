@@ -14,22 +14,15 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 
 	@Override
 	public String getUsername(String email) {
-
 		try {
-			// System.out.println("hello in ud uname");
 			rs = createStatement().executeQuery("select username from reg_page2 where email='"
 					+ email + "'");
 
 			if (rs.next()) {
-				// System.out.println("in uds"+email);
-
 				ss = rs.getString(1);
-				// System.out.println("\n"+ss+"\n");
-
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds" + e.getMessage());
 
 		}
 		return ss;
@@ -39,21 +32,16 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 	public String getDob(String email) {
 
 		try {
-			// System.out.println("hello in ud dob");
 			rs = createStatement().executeQuery("select date,month,year from reg_page2 where email='"
 					+ email + "'");
 
 			if (rs.next()) {
-				// System.out.println("in uds"+email);
-
 				ss = rs.getString(1) + "-" + rs.getString(2) + "-"
 						+ rs.getString(3);
-				// System.out.println("\n"+ss+"\n");
 
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds dob" + e.getMessage());
 
 		}
 		return ss;
@@ -63,20 +51,16 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 	public String getCity(String email) {
 
 		try {
-			// System.out.println("hello in ud city");
 			rs = createStatement().executeQuery("select city from reg_page2 where email='"
 					+ email + "'");
 
 			if (rs.next()) {
-				// System.out.println("in uds"+email);
 
 				ss = rs.getString(1);
-				// System.out.println("\n"+ss+"\n");
 
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds city" + e.getMessage());
 
 		}
 		return ss;
@@ -86,20 +70,16 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 	public String getCountry(String email) {
 
 		try {
-			// System.out.println("hello in ud country");
 			rs = createStatement().executeQuery("select country from reg_page2 where email='"
 					+ email + "'");
 
 			if (rs.next()) {
-				System.out.println("in uds" + email);
-
 				ss = rs.getString(1);
 				System.out.println("\n" + ss + "\n");
 
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds country" + e.getMessage());
 
 		}
 		return ss;
@@ -109,12 +89,10 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 	public String getAddress(String email) {
 
 		try {
-			System.out.println("hello in ud address");
 			rs = createStatement().executeQuery("select address from reg_page2 where email='"
 					+ email + "'");
 
 			if (rs.next()) {
-				System.out.println("in uds" + email);
 
 				ss = rs.getString(1);
 				System.out.println("\n" + ss + "\n");
@@ -122,7 +100,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds address" + e.getMessage());
 
 		}
 		return ss;
@@ -132,20 +109,16 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 	public String getPhone(String email) {
 
 		try {
-			System.out.println("hello in ud phone");
 			rs = createStatement().executeQuery("select ph_no from reg_page2 where email='"
 					+ email + "'");
 
 			if (rs.next()) {
-				System.out.println("in uds" + email);
-
 				ss = rs.getString(1);
 				System.out.println("\n" + ss + "\n");
 
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds phone" + e.getMessage());
 
 		}
 		return ss;
@@ -155,12 +128,10 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 	public String getPincode(String email) {
 
 		try {
-			System.out.println("hello in ud pincode");
 			rs = createStatement().executeQuery("select pincode from reg_page2 where email='"
 					+ email + "'");
 
 			if (rs.next()) {
-				System.out.println("in uds" + email);
 
 				ss = rs.getString(1);
 				System.out.println("\n" + ss + "\n");
@@ -168,7 +139,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds pincode" + e.getMessage());
 
 		}
 		return ss;
@@ -178,12 +148,10 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 	public String getFname(String email) {
 
 		try {
-			System.out.println("hello in ud fname");
 			rs = createStatement().executeQuery("select firstname from reg_page where email='"
 					+ email + "'");
 
 			if (rs.next()) {
-				System.out.println("in uds" + email);
 
 				ss = rs.getString(1);
 				System.out.println("\n" + ss + "\n");
@@ -191,7 +159,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds fname" + e.getMessage());
 
 		}
 		return ss;
@@ -200,17 +167,14 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 	@Override
 	public String getMname(String email) {
 		try {
-			System.out.println("hello in ud mname");
 			rs = createStatement().executeQuery("select middlename from reg_page where email='"
 					+ email + "'");
 			if (rs.next()) {
-				System.out.println("in uds" + email);
 
 				ss = rs.getString(1);
 				System.out.println("\n" + ss + "\n");
 			}
 		} catch (SQLException e) {
-			System.out.println("kill---uds mname" + e.getMessage());
 		}
 		return ss;
 	}
@@ -219,12 +183,10 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 	public String getLname(String email) {
 
 		try {
-			System.out.println("hello in ud lname");
 			rs = createStatement().executeQuery("select lastname from reg_page where email='"
 					+ email + "'");
 
 			if (rs.next()) {
-				System.out.println("in uds" + email);
 
 				ss = rs.getString(1);
 				System.out.println("\n" + ss + "\n");
@@ -232,7 +194,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 
 		}
 
@@ -252,7 +213,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 		}
 
 		return false;
@@ -271,7 +231,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 		}
 		return false;
 	}
@@ -289,7 +248,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 		}
 		return false;
 	}
@@ -305,7 +263,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 				}
 			}
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 		}
 		return false;
 	}
@@ -321,7 +278,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 				}
 			}
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 		}
 		return false;
 	}
@@ -339,7 +295,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			}
 
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 		}
 		return false;
 
@@ -356,7 +311,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 				}
 			}
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 		}
 		return false;
 	}
@@ -372,7 +326,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 				}
 			}
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 		}
 		return false;
 	}
@@ -388,7 +341,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 				}
 			}
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 		}
 		return false;
 	}
@@ -404,7 +356,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 				}
 			}
 		} catch (SQLException e) {
-			System.out.println("kill---uds lname" + e.getMessage());
 		}
 		return false;
 	}
@@ -423,8 +374,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 				ss1 = "yes";
 			}
 		} catch (SQLException e) {
-			System.out.println("kill---uds updating set&&&----->"
-					+ e.getMessage());
 		}
 		return ss1;
 	}
@@ -445,8 +394,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 				ss1 = "yes";
 			}
 		} catch (SQLException e) {
-			System.out.println("kill---uds updating set reg_2&&&----->"
-					+ e.getMessage());
 		}
 		return ss1;
 	}
@@ -468,8 +415,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 				ss1 = "yes";
 			}
 		} catch (SQLException e) {
-			System.out.println("kill---uds updating set reg_2&&&----->"
-					+ e.getMessage());
 		}
 		return ss1;
 	}

@@ -25,7 +25,6 @@ import com.google.gwt.user.client.ui.SuggestBox;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
-//import com.gargoylesoftware.htmlunit.javascript.host.Window;
 
 public class NewUser extends Composite {
 
@@ -129,8 +128,7 @@ public class NewUser extends Composite {
 		NUmmbtb.addItem("SEP");
 		NUmmbtb.addItem("OCT");
 		NUmmbtb.addItem("NOV");
-		NUmmbtb.addItem("DEC");
-		// NUmmbtb.setVisibleItemCount(2);
+		NUmmbtb.addItem("DEC");		
 		final ListBox NUddtb = new ListBox();
 		NUddtb.addItem("dd");
 		for (int i = 1; i <= 9; i++) {
@@ -235,28 +233,28 @@ public class NewUser extends Composite {
 				});
 
 				String captcha = captchaField.getText();
-				/* if (captcha == KeyCodes.KEY_ENTER){ */
+				
 				signupService.performSignup(captcha,
 						new AsyncCallback<Boolean>() {
 
 							public void onSuccess(Boolean result) {
 								if (result) {
-									// Window.alert("CAPTCHA was valid");
+									
 									check1 = true;
-									// System.out.println("check=yes");
+									
 								} else {
 									Window.alert("CAPTCHA was invalid");
 									check1 = false;
-									// System.out.println("check=no");
+									
 								}
 
-								// NUbutton.setEnabled(true);
+								
 							}
 
 							@Override
 							public void onFailure(Throwable caught) {
 								Window.alert("Error occurred while communicating with server");
-								// NUbutton.setEnabled(true);
+								
 							}
 
 						}
@@ -277,7 +275,7 @@ public class NewUser extends Composite {
 
 										vp1.add(s);
 
-										// absolutePanel.clear();
+										
 
 									}
 								}
