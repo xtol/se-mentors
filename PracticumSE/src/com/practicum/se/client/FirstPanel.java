@@ -13,6 +13,7 @@ public class FirstPanel extends Composite {
 		initWidget(this.vpanel);		
 		vpanel.setStyleName("abp");
 		Label lb = new Label("AUTHENTICATION");
+		System.out.println("practicum");
 		lb.setWidth("1300px");
 		lb.setHeight("60px");
 		lb.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
