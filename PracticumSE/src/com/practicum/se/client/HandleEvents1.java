@@ -24,7 +24,7 @@ public class HandleEvents1 extends Composite {
 
 	public HandleEvents1() {
 		initWidget(uiBinder.createAndBindUi(this));
-		// numberButton.addClickHandler(new RanNumHandler());
+		
 		listSetup();
 	}
 

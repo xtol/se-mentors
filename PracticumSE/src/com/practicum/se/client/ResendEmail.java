@@ -6,13 +6,11 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Anchor;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class ResendEmail extends Composite{
@@ -65,8 +63,7 @@ public class ResendEmail extends Composite{
 													Anchor ReSend = new Anchor("Click Here");
 													final Label ReEmail2 = new Label("It will re-send the verification code to Your Email-ID");
 							                              
-													//final TextBox TbReEmail = new TextBox();
-										    	//	final Button ReSend = new Button("SEND");
+													
 										    		FlexTable fp=new FlexTable();
 										    		fp.setWidget(1, 0,ReEmail );
 										    		fp.setWidget(2, 0,ReEmail1 );

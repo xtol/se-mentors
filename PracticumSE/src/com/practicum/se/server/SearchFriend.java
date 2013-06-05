@@ -26,19 +26,12 @@ public class SearchFriend extends DataSourceRemoteServiceServlet implements
 			while (rs.next()) {
 
 				ss.add(rs.getString(1));
-				// System.out.println(rs.getString(1));
-				// System.out.println(rs.getString(1));
 			}
-
-			// System.out.println(ss);
-
 		} catch (SQLException e) {
-			System.out.println("kill" + e.getMessage());
 
 		}
 
 		return ss;
-		// return null;
 	}
 
 }

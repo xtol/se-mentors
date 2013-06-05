@@ -10,9 +10,7 @@ public class FirstPanel extends Composite {
 	private VerticalPanel vpanel = new VerticalPanel();
 
 	public FirstPanel() {
-		initWidget(this.vpanel);
-
-		// vpanel.setBorderWidth(2);
+		initWidget(this.vpanel);		
 		vpanel.setStyleName("abp");
 		Label lb = new Label("AUTHENTICATION");
 		lb.setWidth("1300px");

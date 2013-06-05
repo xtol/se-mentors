@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.logical.shared.SelectionEvent;
 import com.google.gwt.event.logical.shared.SelectionHandler;
@@ -30,9 +29,7 @@ public class UserAccount extends Composite {
 	public UserAccount(final String s1) {
 		initWidget(this.vp2);
 		vp2.setWidth("1300px");
-		// final AbsolutePanel absolutePanel2 = new AbsolutePanel();
-
-		// final AbsolutePanel absolutePanel = new AbsolutePanel();
+		
 		HorizontalPanel hp = new HorizontalPanel();
 
 		a1.getNames(s1, new AsyncCallback<ArrayList<String>>() {

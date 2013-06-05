@@ -20,14 +20,14 @@ public class test1 extends Composite {
 		fp.setCellPadding(10);
 		fp.setCellSpacing(10);
 		fp.addStyleName("pp");
-		// vp1.setStyleName("abp1");
+		
 		vp1.setWidth("1300px");
 		vp1.setHeight("500px");
 		vp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 
 		VerticalPanel yname1 = new VerticalPanel();
 		Label yname = new Label("Your Profile Details");
-		// yname.addStyleName("subhead");
+		
 		yname1.add(yname);
 		vp1.add(yname1);
 

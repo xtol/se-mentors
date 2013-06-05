@@ -17,28 +17,19 @@ public class RegistrationServiceImp extends DataSourceRemoteServiceServlet imple
 	public String newuser(String firstName, String middleName,String lastName, String email, String code )
 	{
 		String ss = "no";
-		
-		System.out.println("hi in new user");
-
-		try {
+				try {
 			boolean ss1;
 			
 			rs = createStatement().executeQuery(" select * from reg_page where email='" + email+ "'");
 			if(rs.next())
 			{
-				System.out.println("in if");
 				return ss;
 			}
 			else{
-				System.out.println("in else");
 			ss1 = createStatement().execute("insert into reg_page values('" + firstName + "','"
 					+ middleName + "','" + lastName + "','"
 					+ email + "','"
 					+ code + "')");
-			
-			
-			//Window.alert("hi in new user");
-			System.out.println("hi in new user---ss1"+ss1);
 				if(!ss1)
 				{
 				ss = "yes";
@@ -65,21 +56,12 @@ public class RegistrationServiceImp extends DataSourceRemoteServiceServlet imple
 
 		// TODO Auto-generated method stub
 		String ss = "no";
-
-		// System.out.println("hi in new user");
-
 		try {
-			System.out.println("hi in new user" + date + "->" + month + "->"
-					+ year);
 			createStatement().execute("insert into reg_page2 values('" + username
 					+ "','" + gender + "','" + country + "','" + city + "','"
 					+ pincode + "','" + address + "','" + ph_no + "','"
 					+ date.toString() + "','" + month + "','" + year + "','"
 					+ password + "','" + email + "')");
-
-			// Window.alert("hi in new user");
-			// System.out.println("hi in new user");
-
 			createStatement().execute("insert into permission values('" + email
 					+ "',1,1,1,1,1,1,1,1,1,1,1,1,1)");
 			ss = "yes";
@@ -109,7 +91,6 @@ public class RegistrationServiceImp extends DataSourceRemoteServiceServlet imple
 				System.out.println(ss);
 			}
 		} catch (SQLException e) {
-			System.out.println("kill" + e.getMessage());
 
 		}
 

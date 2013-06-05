@@ -6,10 +6,7 @@ import java.util.Random;
 
 public class UsernameGen {
 
-	/**
-	 * @param args
-	 * 
-	 */
+	
 	static ArrayList<String> strings = new ArrayList<String>();
 
 	public void pass_name(String firstname, String lastname) {
@@ -22,8 +19,7 @@ public class UsernameGen {
 		HashSet h = new HashSet(strings);
 		strings.clear();
 		strings.addAll(h);
-		// for(int i = 0; i < strings.size() ; i++)
-		// System.out.println( strings.get( i ) );
+		
 
 	}
 

@@ -10,7 +10,6 @@ public class ReturnServiceImp extends DataSourceRemoteServiceServlet implements
 		ReturnService {
 
 	private ResultSet rs = null;
-	private String ss = "no";
 	private String password = null;
 
 	@Override
@@ -21,18 +20,13 @@ public class ReturnServiceImp extends DataSourceRemoteServiceServlet implements
 					+ c1 + "'");
 
 			if (rs.next()) {
-				ss = "yes";
 				password = rs.getString("password");
 
 			} else {
-				ss = "no";
-				System.out.println(ss);
 			}
 		} catch (SQLException e) {
-			System.out.println("kill" + e.getMessage());
 
 		}
-		System.out.println(password);
 		return password;
 
 	}
