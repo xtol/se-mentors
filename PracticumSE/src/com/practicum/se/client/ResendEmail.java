@@ -70,9 +70,6 @@ public class ResendEmail extends Composite{
 										    		fp.setWidget(3, 0,ReSend );
 										    		fp.setWidget(4, 0,ReEmail2 );
 										    		fp.setCellSpacing(20);
-										    		
-										    		//ReSend.setText("Submit");
-										    		
 										    		ReSend.addClickHandler(new ClickHandler()
 										    		{
 
@@ -99,8 +96,7 @@ public class ResendEmail extends Composite{
 																		     {
 																				Window.alert("success");
 																				vp2.clear();
-																			     //    NewUser n=new NewUser(ReenterEmailTextBox.getText());
-																			         NewUser n=new NewUser(email);
+																                NewUser n=new NewUser(email);
 																			         try{
 																			       
 																			        	 vp2.add(n);
@@ -108,7 +104,6 @@ public class ResendEmail extends Composite{
 																			         catch(Exception e)
 																			         {
 																			        	 e.printStackTrace();
-																			        	 System.out.println("about setvisible");
 																			         }
 																			
 																				jx1.updateCode(email, code,new AsyncCallback<Void>()
@@ -137,15 +132,7 @@ public class ResendEmail extends Composite{
 																		}
 																
 																	});
-
-															
-															
-															
-														//	Window.alert("code sent to your given mail id");
-															
-															
-															
-														}
+															}
 										    			
 										    		});
 										    		vp2.add(fp);
@@ -154,7 +141,6 @@ public class ResendEmail extends Composite{
 												{
 													
 													vp2.clear();
-													//Anchor signup=new Anchor("Don't have an account?");
 													Anchor anchor = new Anchor("Click to LOGIN",
 							                                 false,
 							                                 "http://127.0.0.1:8888/PracticumSE.html?gwt.codesvr=127.0.0.1:9997");
@@ -167,19 +153,9 @@ public class ResendEmail extends Composite{
 											}
 									
 								});
-								
-						
 							}
-							//else{System.out.println("elsee 1");}
-							
-						}
-				
+						}				
 					}
-			);
-			
-					
-			    		
-		
+			);								
 	}
-
 }

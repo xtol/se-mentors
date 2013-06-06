@@ -164,7 +164,6 @@ public class SecondPage extends Composite{
 													@Override
 													public void onFailure(Throwable caught) {
 														// TODO Auto-generated method stub
-														//System.out.println(caught);
 														Window.alert("invalid emailid");
 														
 													}
@@ -174,7 +173,6 @@ public class SecondPage extends Composite{
 														// TODO Auto-generated method stub
 														 if(result.equals("true"))
 													     {
-															 System.out.println("hiiiiiiii testing in login screen");
 													   Window.alert("code is sent to your mail");
 													   vp.clear();
 													      NewUser n=new NewUser(s4);
@@ -192,7 +190,6 @@ public class SecondPage extends Composite{
 													     }
 														 if(result.equals("false"))
 													     {
-															 System.out.println("hiiiiiiii testing in login screen NNO");
 															 Window.alert("invalid emailid");
 															
 													     }
@@ -250,9 +247,7 @@ public class SecondPage extends Composite{
 							{
 								Window.alert("Result ok");
 								vp.clear();
-								 //create contents for tabs of tabpanel
 								 TabPanel tabPanel = new TabPanel();
-							      //create titles for tabs
 							      String tab1Title = "Profile";
 							      String tab2Title = "Search";
 							      String tab3Title = "Settings";

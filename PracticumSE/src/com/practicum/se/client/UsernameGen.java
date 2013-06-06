@@ -9,6 +9,7 @@ public class UsernameGen {
 	
 	static ArrayList<String> strings = new ArrayList<String>();
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void pass_name(String firstname, String lastname) {
 		UsernameGen n = new UsernameGen();
 

@@ -49,7 +49,6 @@ public class MailServiceImp extends RemoteServiceServlet implements MailService 
 		} catch (Exception mex) {
 			mex.printStackTrace();
 			st = "false";
-			System.out.println("inside javamail exception");
 			System.out.println(mex);
 		}
 		return st;

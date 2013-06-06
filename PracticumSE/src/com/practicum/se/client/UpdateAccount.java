@@ -93,15 +93,9 @@ public class UpdateAccount extends Composite {
 			}
 		});
 
-		// absolutePanel.add(cbUpUnametb,100,100);
-		// absolutePanel.add(UpUnametb,300,100);
-		// absolutePanel.add(lUpuname,500,100);
-
 		fp.setWidget(1, 0, cbUpUnametb);
 		fp.setWidget(1, 1, UpUnametb);
 		fp.setWidget(1, 2, lUpuname);
-
-		// ///////fname//////////////
 		CheckBox cbUpfnametb = new CheckBox("Update Firstname");
 		final TextBox Upfnametb = new TextBox();
 		final ListBox lUpfname = new ListBox();
@@ -163,14 +157,9 @@ public class UpdateAccount extends Composite {
 
 		});
 
-		// absolutePanel.add(cbUpfnametb,100,150);
-		// absolutePanel.add(Upfnametb,300,150);
-		// absolutePanel.add(lUpfname,500,150);
 		fp.setWidget(2, 0, cbUpfnametb);
 		fp.setWidget(2, 1, Upfnametb);
 		fp.setWidget(2, 2, lUpfname);
-
-		// ///////mname//////////////
 		CheckBox cbUpmnametb = new CheckBox("Update Middlename");
 		final TextBox Upmnametb = new TextBox();
 		final ListBox lUpmname = new ListBox();
@@ -232,15 +221,9 @@ public class UpdateAccount extends Composite {
 
 		});
 
-		// absolutePanel.add(cbUpmnametb,100,200);
-		// absolutePanel.add(Upmnametb,300,200);
-		// absolutePanel.add(lUpmname,500,200);
-
 		fp.setWidget(3, 0, cbUpmnametb);
 		fp.setWidget(3, 1, Upmnametb);
 		fp.setWidget(3, 2, lUpmname);
-
-		// ///////lname//////////////
 		CheckBox cbUplnametb = new CheckBox("Update Lastname");
 		final TextBox Uplnametb = new TextBox();
 		final ListBox lUplname = new ListBox();
@@ -302,15 +285,9 @@ public class UpdateAccount extends Composite {
 
 		});
 
-		// absolutePanel.add(cbUplnametb,100,250);
-		// absolutePanel.add(Uplnametb,300,250);
-		// absolutePanel.add(lUplname,500,250);
-
 		fp.setWidget(4, 0, cbUplnametb);
 		fp.setWidget(4, 1, Uplnametb);
 		fp.setWidget(4, 2, lUplname);
-
-		// ///////dob//////////////
 		CheckBox cbUpdobtb = new CheckBox("Update date of birth");
 		final TextBox Updobtb = new TextBox();
 		final ListBox lUpdob = new ListBox();
@@ -372,15 +349,9 @@ public class UpdateAccount extends Composite {
 
 		});
 
-		// absolutePanel.add(cbUpdobtb,100,300);
-		// absolutePanel.add(Updobtb,300,300);
-		// absolutePanel.add(lUpdob,500,300);
-
 		fp.setWidget(5, 0, cbUpdobtb);
 		fp.setWidget(5, 1, Updobtb);
 		fp.setWidget(5, 2, lUpdob);
-
-		// ///////city//////////////
 		CheckBox cbUpcitytb = new CheckBox("Update city");
 		final TextBox Upcitytb = new TextBox();
 		final ListBox lUpcity = new ListBox();
@@ -442,15 +413,10 @@ public class UpdateAccount extends Composite {
 
 		});
 
-		// absolutePanel.add(cbUpcitytb,100,350);
-		// absolutePanel.add(Upcitytb,300,350);
-		// absolutePanel.add(lUpcity,500,350);
 
 		fp.setWidget(6, 0, cbUpcitytb);
 		fp.setWidget(6, 1, Upcitytb);
 		fp.setWidget(6, 2, lUpcity);
-
-		// ///////country//////////////
 		CheckBox cbUpcountrytb = new CheckBox("Update country");
 		final TextBox Upcountrytb = new TextBox();
 		final ListBox lUpcountry = new ListBox();
@@ -512,15 +478,10 @@ public class UpdateAccount extends Composite {
 
 		});
 
-		// absolutePanel.add(cbUpcountrytb,100,400);
-		// absolutePanel.add(Upcountrytb,300,400);
-		// absolutePanel.add(lUpcountry,500,400);
 
 		fp.setWidget(7, 0, cbUpcountrytb);
 		fp.setWidget(7, 1, Upcountrytb);
 		fp.setWidget(7, 2, lUpcountry);
-
-		// ///////address//////////////
 		CheckBox cbUpaddresstb = new CheckBox("Update address");
 		final TextBox Upaddresstb = new TextBox();
 		final ListBox lUpaddress = new ListBox();
@@ -582,15 +543,9 @@ public class UpdateAccount extends Composite {
 
 		});
 
-		// absolutePanel.add(cbUpaddresstb,100,450);
-		// absolutePanel.add(Upaddresstb,300,450);
-		// absolutePanel.add(lUpaddress,500,450);
-
 		fp.setWidget(8, 0, cbUpaddresstb);
 		fp.setWidget(8, 1, Upaddresstb);
 		fp.setWidget(8, 2, lUpaddress);
-
-		// ///////pincode//////////////
 		CheckBox cbUppincodetb = new CheckBox("Update pincode");
 		final TextBox Uppincodetb = new TextBox();
 		final ListBox lUppincode = new ListBox();
@@ -652,15 +607,9 @@ public class UpdateAccount extends Composite {
 
 		});
 
-		// absolutePanel.add(cbUppincodetb,100,500);
-		// absolutePanel.add(Uppincodetb,300,500);
-		// absolutePanel.add(lUppincode,500,500);
-
 		fp.setWidget(9, 0, cbUppincodetb);
 		fp.setWidget(9, 1, Uppincodetb);
 		fp.setWidget(9, 2, lUppincode);
-
-		// ///////phonenum//////////////
 		CheckBox cbUpphnotb = new CheckBox("Update phone number");
 		final TextBox Upphnotb = new TextBox();
 		final ListBox lUpphno = new ListBox();
@@ -722,17 +671,12 @@ public class UpdateAccount extends Composite {
 
 		});
 
-		// absolutePanel.add(cbUpphnotb,100,550);
-		// absolutePanel.add(Upphnotb,300,550);
-		// absolutePanel.add(lUpphno,500,550);
-
 		fp.setWidget(10, 0, cbUpphnotb);
 		fp.setWidget(10, 1, Upphnotb);
 		fp.setWidget(10, 2, lUpphno);
 
 		final Button UpdateButton = new Button();
 		UpdateButton.setText("Update");
-		// absolutePanel.add(UpdateButton,100,650);
 		fp.setWidget(11, 1, UpdateButton);
 
 		UpdateButton.addClickHandler(new ClickHandler() {
@@ -811,7 +755,6 @@ public class UpdateAccount extends Composite {
 
 							@Override
 							public void onSuccess(String result) {
-								// // should change in database dob
 								// TODO Auto-generated method stub
 								if (result == "yes") {
 									System.out.println("updation uname done");

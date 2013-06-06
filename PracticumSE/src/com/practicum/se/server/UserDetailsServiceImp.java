@@ -75,7 +75,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 
 			if (rs.next()) {
 				ss = rs.getString(1);
-				System.out.println("\n" + ss + "\n");
 
 			}
 
@@ -95,7 +94,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			if (rs.next()) {
 
 				ss = rs.getString(1);
-				System.out.println("\n" + ss + "\n");
 
 			}
 
@@ -114,7 +112,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 
 			if (rs.next()) {
 				ss = rs.getString(1);
-				System.out.println("\n" + ss + "\n");
 
 			}
 
@@ -134,7 +131,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			if (rs.next()) {
 
 				ss = rs.getString(1);
-				System.out.println("\n" + ss + "\n");
 
 			}
 
@@ -154,7 +150,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			if (rs.next()) {
 
 				ss = rs.getString(1);
-				System.out.println("\n" + ss + "\n");
 
 			}
 
@@ -172,7 +167,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			if (rs.next()) {
 
 				ss = rs.getString(1);
-				System.out.println("\n" + ss + "\n");
 			}
 		} catch (SQLException e) {
 		}
@@ -189,7 +183,6 @@ public class UserDetailsServiceImp extends DataSourceRemoteServiceServlet implem
 			if (rs.next()) {
 
 				ss = rs.getString(1);
-				System.out.println("\n" + ss + "\n");
 
 			}
 

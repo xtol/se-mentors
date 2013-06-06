@@ -48,7 +48,6 @@ public class DataSourceRemoteServiceServlet extends RemoteServiceServlet {
 		DataSource ds = getDataSource();
 		if (ds != null)
 			return ds.getConnection();
-		// else, we have to get via jdbc
 		try {
 			Class.forName(DRIVER_CLASS);
 		} catch (ClassNotFoundException e) {

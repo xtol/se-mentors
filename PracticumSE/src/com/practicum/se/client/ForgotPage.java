@@ -85,14 +85,10 @@ public class ForgotPage extends Composite {
 													// TODO Auto-generated
 													
 													if (result.equals("true")) {
-														System.out
-																.println("hiiiiiiii testing in login screen");
 														Window.alert("Password sent to your mail id");
 
 													}
 													if (result.equals("false")) {
-														System.out
-																.println("hiiiiiiii testing in login screen NNO");
 														Window.alert("mail not ok");
 
 													}

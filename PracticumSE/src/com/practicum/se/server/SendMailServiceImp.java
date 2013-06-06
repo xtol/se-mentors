@@ -20,7 +20,6 @@ public class SendMailServiceImp extends RemoteServiceServlet implements
 
 	public String sendMail(String sendto, String message_mi) {
 		// TODO Auto-generated method stub
-		// Recipient's email ID needs to be mentioned.
 		String sender_email = "twinkletalways@gmail.com", sender_host = "smtp.gmail.com", sender_port = "465", reciever_id = sendto, subject_to_be_given = "Authentication Email verification";
 		String st = "true";
 		Properties props = new Properties();
@@ -50,9 +49,6 @@ public class SendMailServiceImp extends RemoteServiceServlet implements
 		} catch (Exception mex) {
 			mex.printStackTrace();
 			st = "false";
-			System.out.println("inside javamail exception");
-			System.out.println("error------>" + mex);
-
 		}
 		return st;
 

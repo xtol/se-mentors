@@ -57,19 +57,15 @@ public class UserAccount extends Composite {
 		});
 
 		Label UAwellb = new Label("Welcome " + s1);
-		// absolutePanel2.add(UAwellb,25,20);
 		hp.add(UAwellb);
 		Label jj = new Label("");
 		jj.setWidth("10px");
 		hp.add(jj);
 		Label UAAddfriendlb = new Label("Search Friend ");
-		// absolutePanel2.add(UAAddfriendlb,75,57);
 		hp.add(UAAddfriendlb);
 
 		final SuggestBox UAAddfriendtb = new SuggestBox(oracle);
 		UAAddfriendtb.setWidth("200");
-
-		// absolutePanel2.add(UAAddfriendtb,300,57);
 		hp.add(UAAddfriendtb);
 		vp2.add(hp);
 		final FlexTable fp = new FlexTable();
@@ -94,6 +90,7 @@ public class UserAccount extends Composite {
 
 							}
 
+							@SuppressWarnings("rawtypes")
 							@Override
 							public void onSuccess(HashMap<String, String> result) {
 								fp.clear();
@@ -101,8 +98,6 @@ public class UserAccount extends Composite {
 								Set<?> set = result.entrySet();
 								// Get an iterator
 								Iterator<?> i = set.iterator();
-								// Display elements
-
 								int j = 0, k = 0;
 
 								while (i.hasNext()) {
@@ -115,7 +110,6 @@ public class UserAccount extends Composite {
 										final Label test = new Label();
 										test.setText("Username	:	"
 												+ me.getValue().toString());
-										// System.out.println("usrname");
 
 										fp.setWidget(j, k, test);
 										j++;

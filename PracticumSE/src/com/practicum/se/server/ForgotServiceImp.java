@@ -26,7 +26,6 @@ public class ForgotServiceImp extends DataSourceRemoteServiceServlet implements
 				System.out.println(ss);
 			}
 		} catch (SQLException e) {
-			System.out.println("kill" + e.getMessage());
 		}
 		return ss;
 	}

@@ -36,6 +36,7 @@ public class NewUser extends Composite {
 	boolean check = false;
 	boolean check1 = false;
 
+	@SuppressWarnings("deprecation")
 	public NewUser(final String email) {
 		VerticalPanel vp = new VerticalPanel();
 		initWidget(this.vp1);
