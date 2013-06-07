@@ -135,7 +135,7 @@ public class SecondPage extends Composite{
 			SignUpButton.addClickHandler(new ClickHandler(){
 				public void onClick(ClickEvent event) {
 					
-					
+					SignUpButton.setEnabled(false);
 					
 					final String s1 = FnameTextBox.getText();
 					final String s2 = MnameTextBox.getText();
@@ -147,7 +147,7 @@ public class SecondPage extends Composite{
 					UsernameGen ug=new UsernameGen();
 					s5=ug.code_generate();
 					final String code_s=s5;
-					System.out.println("in authentication---s5--"+s5);
+				//	System.out.println("in authentication---s5--"+s5);
 					a2.newuser(s1, s2, s3, s4, s5,
 							new AsyncCallback<String>() {
 

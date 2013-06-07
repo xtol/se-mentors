@@ -187,6 +187,7 @@ public class NewUser extends Composite {
 
 		NUbutton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
+			
 				final String s0 = NUEnterCodetb.getText();
 				final String s1 = NUusernametb.getText();
 				final String s2 = (NUgenderftb.getValue()) ? NUgenderftb
@@ -262,7 +263,8 @@ public class NewUser extends Composite {
 
 				);
 				if (check && check1) {
-					System.out.println("inside check");
+					//System.out.println("inside check");
+					NUbutton.setEnabled(false);
 					a2.newuser1(s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11,
 							email, new AsyncCallback<String>() {
 
