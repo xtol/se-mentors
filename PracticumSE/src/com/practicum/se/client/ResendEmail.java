@@ -10,6 +10,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -32,14 +33,14 @@ public class ResendEmail extends Composite{
 
 						@Override
 						public void onFailure(Throwable caught) {
-							// TODO Auto-generated method stub
+							
 							
 						}
 
 						@Override
 						public void onSuccess(String result) {
 							
-							// TODO Auto-generated method stub
+							
 							if (result.equals("yes"))
 							{
 								a1.checkRegistered(email,new AsyncCallback<String>()
@@ -48,13 +49,13 @@ public class ResendEmail extends Composite{
 											@Override
 											public void onFailure(
 													Throwable caught) {
-												// TODO Auto-generated method stub
+												
 												
 											}
 
 											@Override
 											public void onSuccess(String result) {
-												// TODO Auto-generated method stub
+												
 												if(result.equals("no"))
 												{
 													vp2.clear();
@@ -64,26 +65,28 @@ public class ResendEmail extends Composite{
 													final Label ReEmail2 = new Label("It will re-send the verification code to Your Email-ID");
 							                              
 													
-										    		FlexTable fp=new FlexTable();
+										    		final FlexTable fp=new FlexTable();
 										    		fp.setWidget(1, 0,ReEmail );
 										    		fp.setWidget(2, 0,ReEmail1 );
 										    		fp.setWidget(3, 0,ReSend );
 										    		fp.setWidget(4, 0,ReEmail2 );
 										    		fp.setCellSpacing(20);
+										    		final Image image = new Image();
+													 image.setUrl("images/load.gif");
 										    		ReSend.addClickHandler(new ClickHandler()
 										    		{
 
 														@Override
 														public void onClick(ClickEvent event) {
 															
-															
+															fp.setWidget(5,0,image);
 															
 															jx.sendMail(email,code,  new AsyncCallback<String>()
 																	{
 																
 																		@Override
 																		public void onFailure(Throwable caught) {
-																			// TODO Auto-generated method stub
+																			
 																			System.out.println(caught);
 																			Window.alert("failed in on failure--->wrong email ");
 																			
@@ -91,10 +94,11 @@ public class ResendEmail extends Composite{
 
 																		@Override
 																		public void onSuccess(String result){
-																			// TODO Auto-generated method stub
+																			
 																			 if(result.equals("true"))
 																		     {
-																				Window.alert("success");
+																				 fp.clearCell(5,0);
+																				Window.alert("Verification code is sent Please check your mail");
 																				vp2.clear();
 																                NewUser n=new NewUser(email);
 																			         try{
@@ -112,14 +116,14 @@ public class ResendEmail extends Composite{
 																							@Override
 																							public void onFailure(
 																									Throwable caught) {
-																								// TODO Auto-generated method stub
+																								
 																								
 																							}
 
 																							@Override
 																							public void onSuccess(
 																									Void result) {
-																								// TODO Auto-generated method stub
+																								
 																								
 																							}
 																					

@@ -1,10 +1,19 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
-<g:HTMLPanel>
-<table>
-  <tr><td width="10">State: </td> <td width="120"> <g:ListBox ui:field="stateList"/></td>
-     <td width="10">City:  </td><td><g:ListBox ui:field="cityList"/></td></tr>
-</table><br/>
-</g:HTMLPanel>
+	<g:HTMLPanel>
+		<table>
+			<tr>
+				<td width="10">State: </td>
+				<td width="120">
+					<g:ListBox ui:field="stateList" />
+				</td>
+				<td width="10">City:  </td>
+				<td>
+					<g:ListBox ui:field="cityList" />
+				</td>
+			</tr>
+		</table>
+		<br />
+	</g:HTMLPanel>
 </ui:UiBinder> 

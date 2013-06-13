@@ -17,17 +17,17 @@ ReSendCode{
 
 	@Override
 	public String checkRegistered(String email) {
-		// TODO Auto-generated method stub
+		
 		try {
 			
 			rs = createStatement().executeQuery("select * from reg_page2 where email='"+email+"'");
-		System.out.println("in ReSendCOde--->"+email);
+		
 		if(rs.next())
 		{
 			return "yes";
 		}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return "no";
@@ -35,18 +35,18 @@ ReSendCode{
 
 	@Override
 	public String checkHalfRegistered(String email, String code) {
-		// TODO Auto-generated method stub
+		
 		try {
 			rs = createStatement().executeQuery(" select * from reg_page where email='" +email+ "'");
 			if(rs.next())
 			{
 				
-				//System.out.println(rs.getString(1));
+				
 				return "yes";
 				
 			}			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return "no";

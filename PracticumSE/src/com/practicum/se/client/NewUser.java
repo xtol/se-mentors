@@ -212,13 +212,13 @@ public class NewUser extends Composite {
 
 					@Override
 					public void onFailure(Throwable caught) {
-						// TODO Auto-generated method stub
+						
 
 					}
 
 					@Override
 					public void onSuccess(String result) {
-						// TODO Auto-generated method stub
+						
 						if (result.equals("yes")) {
 
 							check = true;
@@ -270,9 +270,9 @@ public class NewUser extends Composite {
 
 								@Override
 								public void onSuccess(String result) {
-									// TODO Auto-generated method stub
+									
 									if (result.equals("yes")) {
-										Window.alert("New User Added");
+										Window.alert("Registered successfully click ok to LOGIN");
 										vp1.clear();
 										SecondPage s = new SecondPage();
 
@@ -285,7 +285,7 @@ public class NewUser extends Composite {
 
 								@Override
 								public void onFailure(Throwable caught) {
-									// TODO Auto-generated method stub
+									
 									caught.printStackTrace();
 									Window.alert("No user aadded");
 								}

@@ -15,6 +15,7 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TabPanel;
@@ -24,7 +25,7 @@ import com.practicum.se.shared.FieldVerifier;
 
 public class SecondPage extends Composite{
 	private VerticalPanel vp=new VerticalPanel();
-
+	
 	 LoginServiceAsync a1 = GWT.create(LoginService.class);
 	 RegistrationServiceAsync a2 = GWT.create(RegistrationService.class);
 	 SendMailServiceAsync jx = GWT.create(SendMailService.class);
@@ -32,6 +33,7 @@ public class SecondPage extends Composite{
 	public SecondPage()
 	{
 		initWidget(this.vp);
+
 		HorizontalPanel hp2=new HorizontalPanel();
 	
 		HorizontalPanel hp3=new HorizontalPanel();
@@ -39,7 +41,7 @@ public class SecondPage extends Composite{
 		
 		HorizontalPanel hp=new HorizontalPanel();
 		hp.setStyleName("abp1");
-		hp.setWidth("600px");
+		hp.setWidth("1300px");
 		hp.setHeight("400px");
 		hp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER );
 		hp.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
@@ -47,7 +49,7 @@ public class SecondPage extends Composite{
 		
 		final HorizontalPanel hp1=new HorizontalPanel();
 		hp1.setStyleName("abp1");
-		hp1.setWidth("650px");
+		hp1.setWidth("1300px");
 		hp1.setHeight("400px");
 		hp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER );
 		hp1.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
@@ -89,7 +91,7 @@ public class SecondPage extends Composite{
 
 			@Override
 			public void onClick(ClickEvent event) {
-				// TODO Auto-generated method stub
+				
 				vp.clear();
 				ForgotPage fp=new ForgotPage();
 				vp.add(fp);
@@ -114,8 +116,8 @@ public class SecondPage extends Composite{
 			final TextBox LnameTextBox = new TextBox();
 			final TextBox EnterEmailTextBox = new TextBox();
 			final TextBox ReenterEmailTextBox = new ExtendedTextBox();
-
-		 VerticalPanel vp2=new VerticalPanel();
+			
+		 final VerticalPanel vp2=new VerticalPanel();
 		 Label l1=new Label("SignUp");
 			vp2.setSpacing(10);
 			fp1.setCellSpacing(7);
@@ -130,13 +132,18 @@ public class SecondPage extends Composite{
 		 hp2.add(hp);
 			hp2.add(hp3);
 			hp1.add(vp2);
-			hp2.add(hp1);
+		//	hp2.add(hp1);
 			vp.add(hp2);
+			final Image image = new Image();
+			 image.setUrl("images/load.gif");
+			
 			SignUpButton.addClickHandler(new ClickHandler(){
 				public void onClick(ClickEvent event) {
 					
 					SignUpButton.setEnabled(false);
-					
+					final Label mailSent=new Label("Mail sending is in process");
+					vp2.add(mailSent);
+					vp2.add(image);
 					final String s1 = FnameTextBox.getText();
 					final String s2 = MnameTextBox.getText();
 					final String s3 = LnameTextBox.getText();
@@ -153,7 +160,7 @@ public class SecondPage extends Composite{
 
 								@Override
 								public void onSuccess(String result) {
-									// TODO Auto-generated method stub
+									
 									if (result.equals("yes")) {
 										
 										
@@ -163,17 +170,19 @@ public class SecondPage extends Composite{
 											
 													@Override
 													public void onFailure(Throwable caught) {
-														// TODO Auto-generated method stub
+														
 														Window.alert("invalid emailid");
 														
 													}
 
 													@Override
 													public void onSuccess(String result){
-														// TODO Auto-generated method stub
+														
 														 if(result.equals("true"))
 													     {
-													   Window.alert("code is sent to your mail");
+															 vp2.remove(mailSent);
+																vp2.remove(image);
+													   Window.alert("code Has been sent to your mail");
 													   vp.clear();
 													      NewUser n=new NewUser(s4);
 													         try{
@@ -210,7 +219,7 @@ public class SecondPage extends Composite{
 
 								@Override
 								public void onFailure(Throwable caught) {
-									// TODO Auto-generated method stub
+									
 									caught.printStackTrace();
 									Window.alert("No user aadded");
 								}
@@ -242,11 +251,22 @@ public class SecondPage extends Composite{
 
 						@Override
 						public void onSuccess(String result) {
-							// TODO Auto-generated method stub
+							
 							if (result.equals("yes"))
 							{
-								Window.alert("Result ok");
+								//Window.alert("Result ok");
 								vp.clear();
+								
+								Anchor sout = new Anchor("SignOUT",
+		                                 false,
+		                                 "http://127.0.0.1:8888/PracticumSE.html?gwt.codesvr=127.0.0.1:9997");
+								//sout.set;
+								
+								vp.add(sout);
+								vp.setCellHeight(sout, "10px");
+								vp.setCellHorizontalAlignment(sout,HasHorizontalAlignment.ALIGN_RIGHT);
+								
+								
 								 TabPanel tabPanel = new TabPanel();
 							      String tab1Title = "Profile";
 							      String tab2Title = "Search";
@@ -256,6 +276,7 @@ public class SecondPage extends Composite{
 							      tabPanel.setHeight("300px");
 							     
 							      
+							    
 									test1 t1=new test1(s1);
 									 tabPanel.add(t1, tab1Title);
 									  tabPanel.selectTab(0);
@@ -263,6 +284,7 @@ public class SecondPage extends Composite{
 									 
 								UserAccount n=new UserAccount(s1);
 								tabPanel.add(n, tab2Title);
+								
 							
 								 
 								
@@ -271,13 +293,14 @@ public class SecondPage extends Composite{
 								tabPanel.add(n1, tab3Title);
 								
 								 
-								 
+								// tabPanel.add(sout,"signout");
 									  vp.add(tabPanel);
+									
 								
 								
 							} 
 							else {
-								Window.alert("Wrong Entry");
+								Window.alert("Inavalid username/Password");
 							}
 
 						}
@@ -296,7 +319,7 @@ public class SecondPage extends Composite{
 
 				@Override
 				public void onClick(ClickEvent event) {
-					// TODO Auto-generated method stub
+					
 					
 					vp.clear();
 					vp.add(hp1);
