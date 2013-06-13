@@ -45,7 +45,7 @@ CREATE TABLE `permission` (
 
 LOCK TABLES `permission` WRITE;
 /*!40000 ALTER TABLE `permission` DISABLE KEYS */;
-INSERT INTO `permission` VALUES ('sajja.sai.prasanna@gmail.com',1,1,1,1,1,0,1,0,0,1,1,1,1);
+INSERT INTO `permission` VALUES ('sajja.sai.prasanna@gmail.com',1,1,1,1,1,1,1,1,1,1,1,1,1),('sajja.guna.sekhar@gmail.com',1,1,1,1,1,1,1,1,1,1,1,1,1),('chand.msit@gmail.com',1,1,1,1,1,1,1,1,1,1,1,1,1);
 /*!40000 ALTER TABLE `permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -69,7 +69,7 @@ CREATE TABLE `reg_page` (
 
 LOCK TABLES `reg_page` WRITE;
 /*!40000 ALTER TABLE `reg_page` DISABLE KEYS */;
-INSERT INTO `reg_page` VALUES ('sajja','','sai prasanna','sajja.sai.prasanna@gmail.com','S054I');
+INSERT INTO `reg_page` VALUES ('kolli','','chandrika','chand.msit@gmail.com','QL3V0'),('kolli','','chandrika','chandu.msit@gmail.com','V5WFW'),('sajja','','gunasekhar','sajja.guna.sekhar@gmail.com','VAWUT'),('sajja','','saiprasanna','sajja.sai.prasanna@gmail.com','GNG0N');
 /*!40000 ALTER TABLE `reg_page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,7 +101,7 @@ CREATE TABLE `reg_page2` (
 
 LOCK TABLES `reg_page2` WRITE;
 /*!40000 ALTER TABLE `reg_page2` DISABLE KEYS */;
-INSERT INTO `reg_page2` VALUES ('saiprasanna','female','Pennsylvania','Pittsburgh','500072','hyderabad','9999999999','28','OCT','1979','msit@1234','sajja.sai.prasanna@gmail.com');
+INSERT INTO `reg_page2` VALUES ('sajja$867','female','New Jersey','Elizabeth','22222','sssss','2222','15','FEB','1993','msit','sajja.sai.prasanna@gmail.com'),('sajjanasek$256','male','New Jersey','Newark','2222','2222','2222','03','MAR','1993','msit','sajja.guna.sekhar@gmail.com'),('chandrika','female','Pennsylvania','Allentown','3333','hfhhd','34343','03','MAR','1992','msit','chand.msit@gmail.com');
 /*!40000 ALTER TABLE `reg_page2` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -114,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-31  8:34:53
+-- Dump completed on 2013-06-13 18:28:39
